@@ -3,38 +3,54 @@
 - hosts: all
   tasks:
 
-  - name: Install packages (Homebrew casks)
-    homebrew_cask:
-      name:
-        - adoptopenjdk8 
-        - minikube
-      state: latest
+# OS packages
 
-  - name: Install packages (Homebrew formulae)
+  - name: add homebrew taps (repos)
+    homebrew_tap:
+      name: "{{ item }}"
+      state: present
+    loop: "{{ homebrew_taps }}"
+
+  - name: install homebrew formulae (packages)
     package:
-      name:
-        - bmon
-        - composer
-        - coreutils
-        - docker-machine
-        - docker-machine-driver-xhyve
-        - git
-        - gnu-tar
-        - gnupg
-        - go
-        - gradle
-        - groovy
-        - jq
-        - kubernetes-cli
-        - kubernetes-helm
-        - maven
-        - node
-        - packer
-        - pass
-        - versent/taps/saml2aws
-        - sshuttle
-        - terraform
-        - tree
-        - watch
-        - wget
+      name: "{{ item }}"
       state: latest
+    loop: "{{ homebrew_formulae }}"
+
+# Dot files
+
+  - name: template .bash_profile
+    template:
+      src: templates/bash/bash_profile
+      dest: $HOME/.bash_profile
+      mode: 0644
+
+  - name: template .gitconfig
+    template:
+      src: templates/git/gitconfig
+      dest: $HOME/.gitconfig
+      mode: 0644
+
+  - name: template .saml2aws
+    template:
+      src: templates/saml2aws/saml2aws
+      dest: $HOME/.saml2aws
+      mode: 0644
+
+  - name: template vscode settings.json
+    template:
+      src: templates/vscode/settings.json
+      dest: "$HOME/Library/Application Support/Code/User/settings.json"
+      mode: 0644
+
+  - name: template vscode tasks.json
+    template:
+      src: templates/vscode/tasks.json
+      dest: "$HOME/Library/Application Support/Code/User/tasks.json"
+      mode: 0644
+
+  - name: template .zshrc
+    template:
+      src: templates/zsh/zshrc
+      dest: $HOME/.zshrc
+      mode: 0644

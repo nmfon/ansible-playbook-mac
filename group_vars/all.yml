@@ -1,0 +1,38 @@
+---
+
+# Ansible config
+ansible_connection: local
+
+# Homebrew taps (repos)
+homebrew_taps:
+  - versent/homebrew-taps
+
+# Homebrew formulae (packages)
+homebrew_formulae:
+  - bmon
+  - composer
+  - coreutils
+  - docker-machine
+  - docker-machine-driver-xhyve
+  - git
+  - gnu-tar
+  - gnupg
+  - go
+  - gradle
+  - groovy
+  - jq
+  - kubernetes-cli
+  - kubernetes-helm
+  - maven
+  - minikube
+  - node
+  - openjdk
+  - packer
+  - pass
+  - podman
+  - versent/taps/saml2aws
+  - sshuttle
+  - terraform
+  - tree
+  - watch
+  - wget
