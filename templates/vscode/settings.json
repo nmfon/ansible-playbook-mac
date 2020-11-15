@@ -1,0 +1,113 @@
+{
+    // CloudFormation Linter plugin
+    // Path to the cfn-lint binary
+    "cfnLint.path": "/usr/local/bin/cfn-lint",
+
+    // Show changes to trailing whitespace
+    "diffEditor.ignoreTrimWhitespace": false,
+
+    // Free up "Alt" key for column selection (hold it down)
+    "editor.multiCursorModifier": "ctrlCmd",
+
+    // Hide control characters
+    "editor.renderControlCharacters": false,
+
+    // Show whitespace
+    "editor.renderWhitespace": "boundary",
+
+    // Disable telemetry (for privacy)
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+
+    // Zoom in a bit :)
+    "window.zoomLevel": 1,
+
+    // Render whitespace in red
+    "workbench.colorCustomizations": {
+        "editorWhitespace.foreground": "#990000"
+    },
+
+    // Disable stupid preview mode (i.e. always open files in a new tab)
+    "workbench.editor.enablePreview": false,
+
+    // Better icons for files and dirs
+    "workbench.iconTheme": "material-icon-theme",
+
+    // Red Hat YAML plugin
+    // Allow CloudFormation keywords as valid YAML per:
+    // https://github.com/redhat-developer/yaml-language-server/issues/77#issuecomment-511768680
+    "yaml.customTags": [
+        "!And scalar",
+        "!And mapping",
+        "!And sequence",
+        "!If scalar",
+        "!If mapping",
+        "!If sequence",
+        "!Not scalar",
+        "!Not mapping",
+        "!Not sequence",
+        "!Equals scalar",
+        "!Equals mapping",
+        "!Equals sequence",
+        "!Or scalar",
+        "!Or mapping",
+        "!Or sequence",
+        "!FindInMap scalar",
+        "!FindInMap mappping",
+        "!FindInMap sequence",
+        "!Base64 scalar",
+        "!Base64 mapping",
+        "!Base64 sequence",
+        "!Cidr scalar",
+        "!Cidr mapping",
+        "!Cidr sequence",
+        "!Ref scalar",
+        "!Ref mapping",
+        "!Ref sequence",
+        "!Sub scalar",
+        "!Sub mapping",
+        "!Sub sequence",
+        "!GetAtt scalar",
+        "!GetAtt mapping",
+        "!GetAtt sequence",
+        "!GetAZs scalar",
+        "!GetAZs mapping",
+        "!GetAZs sequence",
+        "!ImportValue scalar",
+        "!ImportValue mapping",
+        "!ImportValue sequence",
+        "!Select scalar",
+        "!Select mapping",
+        "!Select sequence",
+        "!Split scalar",
+        "!Split mapping",
+        "!Split sequence",
+        "!Join scalar",
+        "!Join mapping",
+        "!Join sequence",
+        "!And",
+        "!If",
+        "!Not",
+        "!Equals",
+        "!Or",
+        "!FindInMap",
+        "!Base64",
+        "!Join",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!Select",
+        "!Split"
+    ],
+
+    // Red Hat YAML plugin
+    // Enable/disable default YAML formatter (requires restart)
+    "yaml.format.enable": true,
+
+    // Red Hat YAML plugin
+    // Enable/disable validation feature
+    "yaml.validate": true
+}

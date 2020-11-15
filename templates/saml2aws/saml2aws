@@ -1,0 +1,98 @@
+# https://versent.atlassian.net/wiki/spaces/BLME/pages/98054229/Accessing+Versent+Innovation+account+sandpit
+# This still works, but can now use Stax... see below.
+[versent]
+app_id               = 
+url                  = https://id.versent.com.au
+username             = nicholas.fone@versent.com.au
+provider             = Ping
+mfa                  = Auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = versent
+subdomain            = 
+role_arn             = 
+
+# https://versent.atlassian.net/wiki/spaces/STAX/pages/752551020/How+to+use+Stax+and+Versent+innovation
+[stax-innovation]
+url                     = https://id.versent.com.au
+username                = nicholas.fone@versent.com.au
+provider                = Ping
+mfa                     = Auto
+skip_verify             = false
+timeout                 = 0
+aws_urn                 = https://id.security.versent-innovation.test.juma.cloud/auth/realms/master
+aws_session_duration    = 3600
+aws_profile             = stax-innovation
+
+[tu]
+app_id               = 
+url                  = https://id.transurban.com
+username             = nfone@transurban.com
+provider             = ADFS
+mfa                  = VIP
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = tu
+subdomain            = 
+role_arn             = 
+
+[vix/stax/build]
+app_id               =
+url                  = https://id.security.vixtechnology.au1.staxapp.cloud/auth/realms/master/protocol/saml/clients/admin-929992820560
+username             = nicholas.fone
+provider             = KeyCloak
+mfa                  = Auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 14400
+aws_profile          = vix/stax/build
+subdomain            =
+role_arn             =
+
+[vix/vdi-sandbox]
+app_id               =
+url                  = https://id.security.vixtechnology.au1.staxapp.cloud/auth/realms/master/protocol/saml/clients/admin-190676679159
+username             = nicholas.fone
+provider             = KeyCloak
+mfa                  = Auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 14400
+aws_profile          = vix/vdi-sandbox
+subdomain            =
+role_arn             =
+
+[vix/vdi-nonprod]
+app_id               =
+url                  = https://id.security.vixtechnology.au1.staxapp.cloud/auth/realms/master/protocol/saml/clients/admin-059262827802
+username             = nicholas.fone
+provider             = KeyCloak
+mfa                  = Auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 14400
+aws_profile          = vix/vdi-nonprod
+subdomain            =
+role_arn             =
+
+[vix/vdi-ops]
+app_id               =
+url                  = https://id.security.vixtechnology.au1.staxapp.cloud/auth/realms/master/protocol/saml/clients/admin-862441233316
+username             = nicholas.fone
+provider             = KeyCloak
+mfa                  = Auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 14400
+aws_profile          = vix/vdi-ops
+subdomain            =
+role_arn             =
+

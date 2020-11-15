@@ -1,0 +1,17 @@
+
+# No longer using bash, as of 2019
+# See .zshrc for current config
+
+# Load bash-completion
+#[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+
+#######################################################
+# Configuration added by installers (sourced by .zshrc)
+#######################################################
+
+# Ping Identity DevOps Aliases - Added with setup on Wed 26 Feb 2020 16:13:35 AEDT
+source /Users/nicholasfone/projects/devops/pingidentity-devops-getting-started/bash_profile_devops
+
+# Source PingIdentity Files Alias - Added with setup on Wed 26 Feb 2020 16:13:38 AEDT
+sourcePingIdentityFiles

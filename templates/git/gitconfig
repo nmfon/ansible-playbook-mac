@@ -1,0 +1,13 @@
+[user]
+	name = nf-versent
+	email = nicholas.fone@versent.com.au
+
+[core]
+	pager = less -F -X
+
+[push]
+	default = current
+
+[remote "origin"]
+	prune = true
+
