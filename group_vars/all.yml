@@ -52,3 +52,42 @@ pip_packages:
   - PyYAML
   - shyaml
   - virtualenv
+
+# Visual Studio Code extensions
+vscode_extensions:
+  - name: CloudFormation Linter
+    id:   kddejong.vscode-cfn-lint
+  - name: Diff
+    id:   fabiospampinato.vscode-diff
+  - name: Docker
+    id:   ms-azuretools.vscode-docker
+  - name: Excel Viewer
+    id:   grapecity.gc-excelviewer
+  - name: GitLens
+    id:   eamodio.gitlens
+  - name: HashiCorp Terraform
+    id:   hashicorp.terraform
+  - name: Instant Markdown
+    id:   dbankier.vscode-instant-markdown
+  - name: Jenkinsfile Support
+    id:   ivory-lab.jenkinsfile-support
+  - name: Jinja
+    id:   wholroyd.jinja
+  - name: Markdownlint
+    id:   davidanson.vscode-markdownlint
+  - name: Material Icon Theme
+    id:   pkief.material-icon-theme
+  - name: Maven for Java
+    id:   vscjava.vscode-maven
+  - name: MySQL Syntax
+    id:   jakebathman.mysql-syntax
+  - name: Python
+    id:   ms-python.python
+  - name: Read-Only Indicator
+    id:   alefragnani.read-only-indicator
+  - name: TODO Highlight
+    id:   wayou.vscode-todo-highlight
+  - name: XML Tools
+    id:   dotjoshjohnson.xml
+  - name: YAML
+    id:   redhat.vscode-yaml
