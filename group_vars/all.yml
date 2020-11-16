@@ -36,3 +36,19 @@ homebrew_formulae:
   - tree
   - watch
   - wget
+
+# Python packages
+pip_packages:
+  - setuptools      # Version bundled with Mac OS is very old
+  - six             # Version bundled with Mac OS is very old
+  - ansible         # Ansible docs recommend installation via pip
+  - ansible-lint
+  - awscli
+  - cfn-lint
+  - cfn_flip
+  - docker
+  - pylint
+  - pyOpenSSL       # Required by awscli, per https://github.com/aws/aws-cli/issues/4708
+  - PyYAML
+  - shyaml
+  - virtualenv
