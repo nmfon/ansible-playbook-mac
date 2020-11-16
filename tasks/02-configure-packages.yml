@@ -1,0 +1,61 @@
+---
+
+# Install Rosetta (required to run applications that contain x86_64 instructions on Apple silicon)
+
+  - name: install rosetta
+    command: softwareupdate --install-rosetta --agree-to-license
+    args:
+      creates: /Library/Apple/usr/libexec/oah/libRosettaRuntime
+    become: yes
+    become_user: root
+    when: ansible_architecture == "arm64"
+
+# Install OS packages
+
+  - name: update homebrew
+    homebrew:
+      update_homebrew: yes
+
+  - name: add homebrew taps (repos)
+    homebrew_tap:
+      name: "{{ item }}"
+      state: present
+    loop: "{{ homebrew_taps }}"
+
+  - name: install homebrew casks (packages for GUI macOS applications)
+    homebrew_cask:
+      name: "{{ item }}"
+      state: latest
+    loop: "{{ homebrew_casks }}"
+
+  - name: install homebrew formulae (packages for command-line macOS utilities)
+    package:
+      name: "{{ item }}"
+      state: latest
+    loop: "{{ homebrew_formulae }}"
+
+# Install Node.js packages
+
+  - name: install node.js packages
+    npm:
+      name: "{{ item }}"
+      global: yes
+      state: latest
+    loop: "{{ nodejs_packages }}"
+
+# Install Python packages
+
+  - name: install python packages
+    pip:
+      name: "{{ item }}"
+      extra_args: "--upgrade --user"
+    loop: "{{ pip_packages }}"
+
+# Install Mac App Store applications
+
+  - name: install mac app store applications
+    mas:
+      id: "{{ item }}"
+      state: latest
+    loop: "{{ mac_app_store_applications }}"
+

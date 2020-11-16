@@ -1,0 +1,14 @@
+---
+
+# Configure Ping DevOps environment
+# https://devops.pingidentity.com/get-started/prereqs/
+
+  # Some of the Ping DevOps examples (e.g. for docker compose) contain hardcoded
+  # references to the default Ping DevOps home directory (~/projects/devops), so
+  # just stick with this value, until this issue is fixed.
+  - name: create Ping DevOps home directory
+    file:
+      path: $HOME/projects/devops
+      state: directory
+      mode: 0755
+

@@ -2,39 +2,7 @@
 
 - hosts: all
   tasks:
-
-  - name: Install packages (Homebrew casks)
-    homebrew_cask:
-      name:
-        - adoptopenjdk8 
-        - minikube
-      state: latest
-
-  - name: Install packages (Homebrew formulae)
-    package:
-      name:
-        - bmon
-        - composer
-        - coreutils
-        - docker-machine
-        - docker-machine-driver-xhyve
-        - git
-        - gnu-tar
-        - gnupg
-        - go
-        - gradle
-        - groovy
-        - jq
-        - kubernetes-cli
-        - kubernetes-helm
-        - maven
-        - node
-        - packer
-        - pass
-        - versent/taps/saml2aws
-        - sshuttle
-        - terraform
-        - tree
-        - watch
-        - wget
-      state: latest
+    - include_tasks: tasks/01-configure-os.yml
+    - include_tasks: tasks/02-configure-packages.yml
+    - include_tasks: tasks/03-configure-apps.yml
+    - include_tasks: tasks/04-configure-demos.yml

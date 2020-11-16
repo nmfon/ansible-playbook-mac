@@ -1,0 +1,11 @@
+# Fields for aws profiles are documented here:
+# https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html#cli-configure-files-settings
+
+
+### Default profile
+
+[default]
+region = ap-southeast-2
+cli_pager =
+output = json
+

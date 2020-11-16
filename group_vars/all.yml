@@ -1,0 +1,228 @@
+---
+
+# Ansible config
+ansible_connection: local
+
+# Python version
+python_version: "3.10"
+
+
+# MacOS defaults
+macos_defaults:
+  - domain: NSGlobalDomain
+    key: AppleShowAllExtensions  # Show all filename extensions in Finder
+    type: bool
+    value: "true"
+  - domain: NSGlobalDomain
+    key: NSAutomaticCapitalizationEnabled  # Do not auto-capitalise the first word of each line in Notes, etc.
+    type: bool
+    value: "false"
+  - domain: com.apple.finder
+    key: AppleShowAllFiles  # Show dot files in Finder
+    type: string
+    value: "true"
+  - domain: com.apple.screencapture
+    key: disable-shadow  # Do not render a shadow/border for screen shots
+    type: bool
+    value: "true"
+
+# Processes to relauch after configuring MacOS defaults
+macos_processes_to_relaunch:
+  - Finder
+  - SystemUIServer
+
+
+# Homebrew taps (repos for thrid-party brew formulae)
+homebrew_taps:
+  - argoproj/tap
+  - fluxcd/tap
+  - hashicorp/tap
+  - kreuzwerker/taps
+  - pingidentity/tap  # replacement for pingidentity/devops tap
+  - radiusmethod/awsd
+  - stax-labs/homebrew-taps
+
+# Homebrew casks (packages for macOS applications)
+homebrew_casks:
+  - 1password
+  - adobe-acrobat-reader  # requires Rosetta 2
+  - amazon-chime
+  - amazon-workspaces
+  - aws-vpn-client
+  - betterdisplay
+  - beyond-compare
+  - box-sync
+  - docker
+  - font-meslo-for-powerline  # requires homebrew tap "homebrew/cask-fonts"
+  - google-chrome
+  - google-cloud-sdk  # includes gcloud CLI
+  - google-drive  # no longer supported on Mac OS 10.13.6
+  - iterm2  # no longer supported on Mac OS 10.13.6
+#  - kindle  # old Kindle Classic app (support ended Oct 31, 2023)
+  - kitematic  # runs like molasses on Mac OS 10.13.6
+  - lens
+  - maccy  # clipboard manager (with copy/paste history)
+  - microsoft-office
+  - microsoft-remote-desktop  # no longer supported on Mac OS 10.13.6
+# - microsoft-teams  # requires Rosetta 2 and no longer supported on Mac OS 10.13.6
+# - openconnect-gui  # not required for now
+  - openvpn-connect
+  - postman
+# - skype-for-business  # requires Rosetta 2 and no longer supported on Mac OS 10.13.6
+  - slack  # no longer supported on Mac OS 10.13.6
+  - snowflake-snowsql  # includes snowsql CLI
+  - spectacle  # install broken on Mac OS 10.13.6
+  - utm
+  - vagrant
+# - virtualbox  # requires an Intel processor (it's an x86 hypervisor, not an emulator)... use utm instead
+  - visual-studio-code  # no longer supported on Mac OS 10.13.6
+  - vlc  # no longer supported on Mac OS 10.13.6
+# - zoom
+
+# Homebrew formulae (packages for command-line macOS applications)
+homebrew_formulae:
+# - gcc  # required by various formulae on Mac OS 10.13.6 (such as awscli@2), and fails to build on Mac OS 10.13.6 (Warning: You are using macOS 10.13. We (and Apple) do not provide support for this old version.)
+# - z3  # requires GNU gcc, and is required by various formulae on Mac OS 10.13.6 (such as awscli@2i, node and podman)
+  - 1password-cli
+  - argocd
+  - awscli@2  # requires z3 on Mac Os 10.13.6, which requires GNU gcc
+  - awsd  # requires homebrew tap "radiusmethod/awsd"
+  - aws-sso-util
+  - bash
+  - bmon
+  - composer
+  - coreutils
+  - dos2unix
+  - drone-cli
+  - eksctl
+  - fluxcd/tap/flux  # requires homebrew tap "fluxcd/tap"
+  - git
+  - gnu-tar
+  - gnupg
+  - go
+  - gradle
+  - groovy
+  - hashicorp/tap/packer  # requires homebrew tap "hashicorp/tap"
+  - hashicorp/tap/vault  # requires homebrew tap "hashicorp/tap"
+  - helm
+  - jenv
+  - jose
+  - jq
+  - k9s
+  - kopia
+  - kops
+  - krew
+  - kubectl
+  - kubectl-argo-rollouts  # requires homebrew tap "argoproj/tap"
+  - kubectx
+  - kubent  # kube no trouble (find deprecated API's)
+  - kustomize
+  - mas  # required to install Mac App Store applications via this playbook
+  - maven
+  - m1-terraform-provider-helper  # requires homebrew tap "kreuzwerker/taps"
+  - minikube
+  - mongosh
+  - mysql-client
+  - node@20
+  - node@22
+  - nvm
+  - openjdk
+  - openjdk@11
+  - openjdk@17
+  - openvpn
+  - pass
+  - pingctl  # replacement for ping-devops formula, requires homebrew tap "pingidentity/taps"
+  - pnpm  # another package manager for Node.js projects
+  - podman
+  - popeye
+  - postgresql@14
+  - pwgen
+  - rain  # command line tool for working with AWS CloudFormation templates and stacks
+  - saml2aws
+  - shellcheck
+  - sshuttle
+  - stax2aws  # requires homebrew tap "stax-labs/homebrew-taps"
+  - telnet
+  - tfenv  # provides multiple versions of terraform
+  - tflint
+  - tree
+  - velero
+  - watch
+  - wget
+  - yarn
+  - ykman  # yubikey manager
+
+
+# Node.js packages
+nodejs_packages:
+  - newman
+  - newman-reporter-html
+
+
+# Python packages
+pip_packages:
+  - setuptools      # Version bundled with Mac OS is very old
+  - six             # Version bundled with Mac OS is very old
+  - ansible         # Ansible docs recommend installation via pip
+  - ansible-lint
+  - aws-adfs
+  - aws-sigv4
+  - aws-ssm-copy
+  - boto
+  - boto3
+  - cfn-lint
+  - cfn_flip
+  - docker
+  - git-remote-codecommit
+  - jinja2
+  - pylint
+  - PyYAML
+  - shyaml
+  - virtualenv
+
+
+# Mac App Store applications (ids)
+mac_app_store_applications:
+  - 1352778147  # Bitwarden (as at 2024-03-21, only the App Store version supports biometrics, such as TouchID)
+
+
+# Visual Studio Code extensions
+vscode_extensions:
+  - name: CloudFormation Linter
+    id:   kddejong.vscode-cfn-lint
+  - name: Diff
+    id:   fabiospampinato.vscode-diff
+  - name: Docker
+    id:   ms-azuretools.vscode-docker
+  - name: Excel Viewer
+    id:   grapecity.gc-excelviewer
+  - name: GitLens
+    id:   eamodio.gitlens
+  - name: HashiCorp Terraform
+    id:   hashicorp.terraform
+  - name: Instant Markdown
+    id:   dbankier.vscode-instant-markdown
+  - name: Jenkinsfile Support
+    id:   ivory-lab.jenkinsfile-support
+  - name: Jinja
+    id:   wholroyd.jinja
+  - name: Markdownlint
+    id:   davidanson.vscode-markdownlint
+  - name: Material Icon Theme
+    id:   pkief.material-icon-theme
+  - name: Maven for Java
+    id:   vscjava.vscode-maven
+  - name: MySQL Syntax
+    id:   jakebathman.mysql-syntax
+  - name: Python
+    id:   ms-python.python
+  - name: Read-Only Indicator
+    id:   alefragnani.read-only-indicator
+  - name: ShellCheck
+    id:   timonwong.shellcheck
+  - name: TODO Highlight
+    id:   wayou.vscode-todo-highlight
+  - name: XML Tools
+    id:   dotjoshjohnson.xml
+  - name: YAML
+    id:   redhat.vscode-yaml
