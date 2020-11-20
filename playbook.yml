@@ -19,6 +19,10 @@
 
 # OS packages
 
+  - name: update homebrew
+    homebrew:
+      update_homebrew: yes
+
   - name: add homebrew taps (repos)
     homebrew_tap:
       name: "{{ item }}"
