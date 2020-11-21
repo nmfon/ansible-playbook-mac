@@ -51,14 +51,6 @@
       extra_args: "--upgrade --user"
     loop: "{{ pip_packages }}"
 
-# Visual Studio Code extensions
-
-  - name: install vscode extensions
-    command: code --install-extension {{ item.id}}
-    loop: "{{ vscode_extensions }}"
-    loop_control:
-      label: "{{ item.name }}"
-
 # Application config
 
   - name: template .gitconfig
@@ -84,3 +76,11 @@
       src: templates/vscode/tasks.json
       dest: "$HOME/Library/Application Support/Code/User/tasks.json"
       mode: 0644
+
+# Visual Studio Code extensions
+
+  - name: install vscode extensions
+    command: code --install-extension {{ item.id}}
+    loop: "{{ vscode_extensions }}"
+    loop_control:
+      label: "{{ item.name }}"
