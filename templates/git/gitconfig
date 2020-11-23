@@ -5,6 +5,9 @@
 [core]
 	pager = less -F -X
 
+[pull]
+	ff = only
+
 [push]
 	default = current
 
