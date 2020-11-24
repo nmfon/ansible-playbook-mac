@@ -1,2 +1,14 @@
 [default]
 region = ap-southeast-2
+
+[profile versent]
+region = ap-southeast-2
+
+[profile stax-innovation]
+region = ap-southeast-2
+
+[profile bendigo]
+region = ap-southeast-2
+
+[profile tu]
+region = ap-southeast-2
