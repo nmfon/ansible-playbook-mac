@@ -37,14 +37,6 @@
 
 # Python packages
 
-  - name: download pip installer script
-    get_url:
-      url: https://bootstrap.pypa.io/get-pip.py
-      dest: /tmp/get-pip.py
-
-  - name: install pip
-    command: python /tmp/get-pip.py --user
-
   - name: install python packages
     pip:
       name: "{{ item }}"
