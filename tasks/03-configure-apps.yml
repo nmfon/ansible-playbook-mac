@@ -1,0 +1,59 @@
+---
+
+# Configure AWS CLI
+
+  - name: create .aws/ directory
+    file:
+      path: $HOME/.aws/
+      state: directory
+      mode: 0755
+
+  - name: template .aws/config
+    template:
+      src: templates/aws/config
+      dest: $HOME/.aws/config
+      mode: 0644
+
+# Configure Git
+
+  - name: configure git core.pager
+    command: git config --global core.pager "less -F -X"
+
+  - name: configure git pull.ff
+    command: git config --global pull.ff "only"
+
+  - name: configure git push.default
+    command: git config --global push.default "current"
+
+  - name: configure git remote.origin
+    command: git config --global remote.origin.prune "true"
+
+# Configure saml2aws
+
+  - name: template .saml2aws
+    template:
+      src: templates/saml2aws/saml2aws
+      dest: $HOME/.saml2aws
+      mode: 0644
+
+# Configure Visual Studio Code
+
+  - name: template vscode settings.json
+    template:
+      src: templates/vscode/settings.json
+      dest: "$HOME/Library/Application Support/Code/User/settings.json"
+      mode: 0644
+
+  - name: template vscode tasks.json
+    template:
+      src: templates/vscode/tasks.json
+      dest: "$HOME/Library/Application Support/Code/User/tasks.json"
+      mode: 0644
+
+# Install Visual Studio Code extensions
+
+  - name: install vscode extensions
+    command: code --install-extension {{ item.id}}
+    loop: "{{ vscode_extensions }}"
+    loop_control:
+      label: "{{ item.name }}"

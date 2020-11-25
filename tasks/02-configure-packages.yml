@@ -1,0 +1,27 @@
+---
+
+# Install OS packages
+
+  - name: update homebrew
+    homebrew:
+      update_homebrew: yes
+
+  - name: add homebrew taps (repos)
+    homebrew_tap:
+      name: "{{ item }}"
+      state: present
+    loop: "{{ homebrew_taps }}"
+
+  - name: install homebrew formulae (packages)
+    package:
+      name: "{{ item }}"
+      state: latest
+    loop: "{{ homebrew_formulae }}"
+
+# Install Python packages
+
+  - name: install python packages
+    pip:
+      name: "{{ item }}"
+      extra_args: "--upgrade --user"
+    loop: "{{ pip_packages }}"
