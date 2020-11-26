@@ -50,9 +50,12 @@ pip_packages:
   - ansible         # Ansible docs recommend installation via pip
   - ansible-lint
   - awscli
+  - boto
+  - boto3
   - cfn-lint
   - cfn_flip
   - docker
+  - jinja2
   - pylint
   - pyOpenSSL       # Required by awscli, per https://github.com/aws/aws-cli/issues/4708
   - PyYAML
