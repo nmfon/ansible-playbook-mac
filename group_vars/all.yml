@@ -43,6 +43,11 @@ homebrew_formulae:
   - watch
   - wget
 
+# Node.js packages
+nodejs_packages:
+  - newman
+  - newman-reporter-html
+
 # Python packages
 pip_packages:
   - setuptools      # Version bundled with Mac OS is very old
