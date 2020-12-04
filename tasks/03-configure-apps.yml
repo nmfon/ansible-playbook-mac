@@ -28,6 +28,9 @@
   - name: configure git remote.origin
     command: git config --global remote.origin.prune "true"
 
+  - name: configure git user.useConfigOnly (force user to set user and email)
+    command: git config --global user.useConfigOnly "true"
+
 # Configure saml2aws
 
   - name: template .saml2aws
