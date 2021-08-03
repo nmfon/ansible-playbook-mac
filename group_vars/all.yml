@@ -99,6 +99,8 @@ vscode_extensions:
     id:   ms-python.python
   - name: Read-Only Indicator
     id:   alefragnani.read-only-indicator
+  - name: ShellCheck
+    id:   timonwong.shellcheck
   - name: TODO Highlight
     id:   wayou.vscode-todo-highlight
   - name: XML Tools
