@@ -18,6 +18,9 @@
     // Show whitespace
     "editor.renderWhitespace": "boundary",
 
+    // Show vertical rulers to indicate common max line lengths
+    "editor.rulers": [80, 100, 120],
+
     // Whether the proxy server certificate should be verified against the list of supplied CAs
     "http.proxyStrictSSL": false,
 
