@@ -10,8 +10,9 @@
 # Configuration added by installers (sourced by .zshrc)
 #######################################################
 
-# Ping Identity DevOps Aliases - Added with setup on Wed 26 Feb 2020 16:13:35 AEDT
-source /Users/nicholasfone/projects/devops/pingidentity-devops-getting-started/bash_profile_devops
+# Ping Identity DevOps Aliases - Added with 'ping-devops config' on Tue  3 Aug 2021 15:15:18 AEST
+test -f '/usr/local/etc/bash_profile.ping-devops' && source '/usr/local/etc/bash_profile.ping-devops'
 
-# Source PingIdentity Files Alias - Added with setup on Wed 26 Feb 2020 16:13:38 AEDT
+# Source PingIdentity Files Alias - Added with 'ping-devops config' on Tue  3 Aug 2021 15:19:01 AEST
 sourcePingIdentityFiles
+
