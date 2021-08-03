@@ -6,6 +6,9 @@
     // Show changes to trailing whitespace
     "diffEditor.ignoreTrimWhitespace": false,
 
+    // Show changes side-by-side
+    "diffEditor.renderSideBySide": true,
+
     // Free up "Alt" key for column selection (hold it down)
     "editor.multiCursorModifier": "ctrlCmd",
 
