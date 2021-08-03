@@ -5,6 +5,7 @@ ansible_connection: local
 
 # Homebrew taps (repos)
 homebrew_taps:
+  - pingidentity/devops
   - versent/homebrew-taps
 
 # Homebrew formulae (packages)
@@ -34,6 +35,7 @@ homebrew_formulae:
   - openjdk
   - packer
   - pass
+  - ping-devops
   - podman
   - python@3.9
   - versent/taps/saml2aws
