@@ -16,11 +16,12 @@ brew install python@3.9
 
 # Install pip 3
 curl -Lk https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
-/usr/local/bin/python3 /tmp/get-pip.py --user
+python3 /tmp/get-pip.py --user
+pip3 install --upgrade pip
 
 # Install Ansible
 export PATH=$HOME/Library/Python/3.9/bin:$PATH
-/usr/local/bin/pip3 install --upgrade --user ansible
+pip3 install --upgrade --user ansible
 ```
 
 ## Usage
