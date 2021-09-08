@@ -57,6 +57,7 @@ pip_packages:
   - ansible         # Ansible docs recommend installation via pip
   - ansible-lint
   - awscli
+  - aws-ssm-copy
   - boto
   - boto3
   - cfn-lint
