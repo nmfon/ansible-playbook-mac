@@ -9,6 +9,9 @@
     // Show changes side-by-side
     "diffEditor.renderSideBySide": true,
 
+    // Bracket pair colourisation (new in version 1.60.0)
+    "editor.bracketPairColorization.enabled": true,
+
     // Free up "Alt" key for column selection (hold it down)
     "editor.multiCursorModifier": "ctrlCmd",
 
