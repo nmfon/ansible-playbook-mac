@@ -40,7 +40,7 @@
     "java.checkstyle.configuration": "/google_checks.xml",
 
     // Automatically update java build config if it changes
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
 
     // Set JAVA_HOME explicity, otherwise Language Support for Java extension fails to detect JAVA_HOME
     "java.home": "/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home",
