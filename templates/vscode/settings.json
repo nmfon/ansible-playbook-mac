@@ -138,6 +138,10 @@
     "yaml.format.enable": true,
 
     // Red Hat YAML plugin
+    // Enable/disable pulling in all available schemas from JSON Schema Store
+    "yaml.schemaStore.enable": true,
+
+    // Red Hat YAML plugin
     // Enable/disable validation feature
     "yaml.validate": true
 }
