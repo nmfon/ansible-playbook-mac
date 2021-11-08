@@ -7,20 +7,36 @@ region = ap-southeast-2
 [profile stax-innovation]
 region = ap-southeast-2
 
+
 [profile bendigo-sandbox]
+region = ap-southeast-2
+
+[profile bendigo-sandbox-s3readonly]
+region = ap-southeast-2
+
+
+[profile bendigo-nonprod-breakglass]
 region = ap-southeast-2
 
 [profile bendigo-nonprod-eksadmin]
 region = ap-southeast-2
 
+[profile bendigo-nonprod-s3readonly]
+region = ap-southeast-2
+
 [profile bendigo-nonprod-secretsmanagement]
 region = ap-southeast-2
+
 
 [profile bendigo-prod-eksadmin]
 region = ap-southeast-2
 
+[profile bendigo-prod-s3readonly]
+region = ap-southeast-2
+
 [profile bendigo-prod-secretsmanagement]
 region = ap-southeast-2
+
 
 [profile tu]
 region = ap-southeast-2
