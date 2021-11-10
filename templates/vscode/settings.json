@@ -51,6 +51,9 @@
     // Disable Red Hat telemetry (for privacy)
     "redhat.telemetry.enabled": false,
 
+    // Shellcheck
+    "shellcheck.customArgs": ["-x"],
+
     // Disable VS Code telemetry (for privacy)
     "telemetry.telemetryLevel": "off",
 
