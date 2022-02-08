@@ -48,6 +48,96 @@ resource_id          =
 subdomain            =
 role_arn             = arn:aws:iam::597778058138:role/ADFS-Sandbox
 
+[bendigo-sandbox-s3readonly]
+app_id               =
+url                  = https://adfs.bendigoadelaide.com.au/
+username             = Nicholas.Fone@bendigoadelaide.com.au
+provider             = ADFS
+mfa                  = VIP
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = bendigo-sandbox-s3readonly
+resource_id          =
+subdomain            =
+role_arn             = arn:aws:iam::597778058138:role/ADFS-S3RO-CMK-s3-readonly
+
+[bendigo-dev-breakglass]
+app_id               =
+url                  = https://adfs.bendigoadelaide.com.au/
+username             = Nicholas.Fone@bendigoadelaide.com.au
+provider             = ADFS
+mfa                  = VIP
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = bendigo-dev-breakglass
+resource_id          =
+subdomain            =
+role_arn             = arn:aws:iam::459523021439:role/ADFS-BreakGlass
+
+[bendigo-dev-eksadmin]
+app_id               =
+url                  = https://adfs.bendigoadelaide.com.au/
+username             = Nicholas.Fone@bendigoadelaide.com.au
+provider             = ADFS
+mfa                  = VIP
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = bendigo-dev-eksadmin
+resource_id          =
+subdomain            =
+role_arn             = arn:aws:iam::459523021439:role/ADFS-EKSAdmin
+
+[bendigo-dev-s3readonly]
+app_id               =
+url                  = https://adfs.bendigoadelaide.com.au/
+username             = Nicholas.Fone@bendigoadelaide.com.au
+provider             = ADFS
+mfa                  = VIP
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = bendigo-dev-s3readonly
+resource_id          =
+subdomain            =
+role_arn             = arn:aws:iam::459523021439:role/ADFS-S3RO-CMK-s3-readonly
+
+[bendigo-dev-secretsmanagement]
+app_id               =
+url                  = https://adfs.bendigoadelaide.com.au/
+username             = Nicholas.Fone@bendigoadelaide.com.au
+provider             = ADFS
+mfa                  = VIP
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = bendigo-dev-secretsmanagement
+resource_id          =
+subdomain            =
+role_arn             = arn:aws:iam::459523021439:role/ADFS-SecretsManagement
+
+[bendigo-nonprod-breakglass]
+app_id               =
+url                  = https://adfs.bendigoadelaide.com.au/
+username             = Nicholas.Fone@bendigoadelaide.com.au
+provider             = ADFS
+mfa                  = VIP
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = bendigo-nonprod-breakglass
+resource_id          =
+subdomain            =
+role_arn             = arn:aws:iam::414424376303:role/ADFS-BreakGlass
+
 [bendigo-nonprod-eksadmin]
 app_id               =
 url                  = https://adfs.bendigoadelaide.com.au/
@@ -62,6 +152,21 @@ aws_profile          = bendigo-nonprod-eksadmin
 resource_id          =
 subdomain            =
 role_arn             = arn:aws:iam::414424376303:role/ADFS-EKSAdmin
+
+[bendigo-nonprod-s3readonly]
+app_id               =
+url                  = https://adfs.bendigoadelaide.com.au/
+username             = Nicholas.Fone@bendigoadelaide.com.au
+provider             = ADFS
+mfa                  = VIP
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = bendigo-nonprod-s3readonly
+resource_id          =
+subdomain            =
+role_arn             = arn:aws:iam::414424376303:role/ADFS-S3RO-CMK-s3-readonly
 
 [bendigo-nonprod-secretsmanagement]
 app_id               =
@@ -78,6 +183,21 @@ resource_id          =
 subdomain            =
 role_arn             = arn:aws:iam::414424376303:role/ADFS-SecretsManagement
 
+[bendigo-prod-breakglass]
+app_id               =
+url                  = https://adfs.bendigoadelaide.com.au/
+username             = Nicholas.Fone@bendigoadelaide.com.au
+provider             = ADFS
+mfa                  = VIP
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = bendigo-prod-breakglass
+resource_id          =
+subdomain            =
+role_arn             = arn:aws:iam::703238125759:role/ADFS-BreakGlass
+
 [bendigo-prod-eksadmin]
 app_id               =
 url                  = https://adfs.bendigoadelaide.com.au/
@@ -92,6 +212,21 @@ aws_profile          = bendigo-prod-eksadmin
 resource_id          =
 subdomain            =
 role_arn             = arn:aws:iam::703238125759:role/ADFS-EKSAdmin
+
+[bendigo-prod-s3readonly]
+app_id               =
+url                  = https://adfs.bendigoadelaide.com.au/
+username             = Nicholas.Fone@bendigoadelaide.com.au
+provider             = ADFS
+mfa                  = VIP
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = bendigo-prod-s3readonly
+resource_id          =
+subdomain            =
+role_arn             = arn:aws:iam::703238125759:role/ADFS-S3RO-CMK-s3-readonly
 
 [bendigo-prod-secretsmanagement]
 app_id               =
