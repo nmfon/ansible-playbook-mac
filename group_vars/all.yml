@@ -37,7 +37,6 @@ homebrew_formulae:
   - pass
   - ping-devops
   - podman
-  - python@3.9
   - versent/taps/saml2aws
   - sshuttle
   - terraform
