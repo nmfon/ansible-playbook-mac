@@ -1,18 +1,7 @@
+# shellcheck shell=bash
 
 # No longer using bash, as of 2019
-# See .zshrc for current config
+# Now using zsh + oh-my-zsh (see .zshrc for config)
 
 # Load bash-completion
 #[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-
-
-#######################################################
-# Configuration added by installers (sourced by .zshrc)
-#######################################################
-
-# Ping Identity DevOps Aliases - Added with 'ping-devops config' on Tue  3 Aug 2021 15:15:18 AEST
-test -f '/usr/local/etc/bash_profile.ping-devops' && source '/usr/local/etc/bash_profile.ping-devops'
-
-# Source PingIdentity Files Alias - Added with 'ping-devops config' on Tue  3 Aug 2021 15:19:01 AEST
-sourcePingIdentityFiles
-

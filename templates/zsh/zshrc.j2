@@ -107,10 +107,6 @@ source $ZSH/oh-my-zsh.sh
 # My customisations
 
 
-# Source bash profile (only for configuration added by installers)
-source $HOME/.bash_profile
-
-
 # Remove username@hostname from prompt (when logged in as myself on localhost)
 DEFAULT_USER=$USER
 
@@ -221,3 +217,6 @@ function tu-proxy-disable() {
 
     tu-proxy-status
 }
+
+# Ping Identity - Added with 'pingctl config' on Tue  8 Feb 2022 11:51:50 AEDT
+test -f '/Users/nicholasfone/.pingidentity/config' && source '/Users/nicholasfone/.pingidentity/config'

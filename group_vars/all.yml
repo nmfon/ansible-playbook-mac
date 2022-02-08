@@ -6,10 +6,10 @@ python_version: "3.10"
 # Ansible config
 ansible_connection: local
 
-# Homebrew taps (repos)
+# Homebrew taps (repos for thrid-party brew formulae)
 homebrew_taps:
-  - pingidentity/devops
-  - versent/homebrew-taps
+#  - pingidentity/devops  # deprecated
+  - pingidentity/tap  # new
 
 # Homebrew casks (packages for GUI macOS applications)
 homebrew_casks:
@@ -60,7 +60,8 @@ homebrew_formulae:
   - openjdk
   - packer
   - pass
-  - ping-devops
+#  - ping-devops  # deprecated (supports bash)
+  - pingctl  # new (supports zsh)
   - podman
   - saml2aws
   - shellcheck
