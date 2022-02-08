@@ -10,6 +10,6 @@
 
   - name: template .zshrc
     template:
-      src: templates/zsh/zshrc
+      src: templates/zsh/zshrc.j2
       dest: $HOME/.zshrc
       mode: 0644

@@ -132,8 +132,12 @@ export PATH="$GOPATH/bin:$PATH"
 # MacPorts bin path
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
-# Python site packages path
-export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+# Python binary paths
+export PATH="/opt/homebrew/opt/python@{{ python_version }}/libexec/bin:$PATH"  # symlinks for generic python executables
+export PATH="/opt/homebrew/opt/python@{{ python_version }}/bin:$PATH"  # symlinks for version-specific python executables
+
+# Python user site packages path
+export PATH="$HOME/Library/Python/{{ python_version }}/bin:$PATH"
 
 # Sonar bin path
 export PATH="/opt/sonar-scanner-3.2.0.1227-macosx/bin:$PATH"

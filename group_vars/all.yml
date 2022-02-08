@@ -1,5 +1,8 @@
 ---
 
+# Python version
+python_version: "3.10"
+
 # Ansible config
 ansible_connection: local
 
