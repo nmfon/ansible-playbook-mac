@@ -41,8 +41,6 @@ homebrew_formulae:
   - bmon
   - composer
   - coreutils
-  - docker-machine
-  - docker-machine-driver-xhyve
   - eksctl
   - git
   - gnu-tar
@@ -50,12 +48,11 @@ homebrew_formulae:
   - go
   - gradle
   - groovy
+  - helm
   - jq
   - k9s
   - kubectl
   - kubectx
-  - kubernetes-cli
-  - kubernetes-helm
   - kustomize
   - maven
   - minikube
@@ -65,7 +62,8 @@ homebrew_formulae:
   - pass
   - ping-devops
   - podman
-  - versent/taps/saml2aws
+  - saml2aws
+  - shellcheck
   - sshuttle
   - terraform
   - tree
