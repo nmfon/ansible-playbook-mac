@@ -1,5 +1,15 @@
 ---
 
+# Install Rosetta (required to run applications that contain x86_64 instructions on Apple silicon)
+
+  - name: install rosetta
+    command: softwareupdate --install-rosetta --agree-to-license
+    args:
+      creates: /Library/Apple/usr/libexec/oah/libRosettaRuntime
+    become: yes
+    become_user: root
+    when: ansible_architecture == "arm64"
+
 # Install OS packages
 
   - name: update homebrew
