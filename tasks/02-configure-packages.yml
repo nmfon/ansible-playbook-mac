@@ -12,7 +12,13 @@
       state: present
     loop: "{{ homebrew_taps }}"
 
-  - name: install homebrew formulae (packages)
+  - name: install homebrew casks (packages for GUI macOS applications)
+    homebrew_cask:
+      name: "{{ item }}"
+      state: latest
+    loop: "{{ homebrew_casks }}"
+
+  - name: install homebrew formulae (packages for command-line macOS utilities)
     package:
       name: "{{ item }}"
       state: latest

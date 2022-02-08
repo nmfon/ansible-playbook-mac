@@ -11,7 +11,32 @@ homebrew_taps:
   - pingidentity/devops
   - versent/homebrew-taps
 
-# Homebrew formulae (packages)
+# Homebrew casks (packages for GUI macOS applications)
+homebrew_casks:
+  - 1password
+  - adobe-acrobat-reader  # requires Rosetta 2
+  - beyond-compare
+  - box-sync
+  - docker
+  - google-chrome
+  - iterm2
+  - kindle
+  - kitematic
+  - microsoft-office
+  - microsoft-remote-desktop
+  - microsoft-teams  # requires Rosetta 2
+  - openconnect-gui
+  - postman
+  - skype-for-business  # requires Rosetta 2
+  - slack
+#  - spectacle  # install broken
+  - vagrant
+#  - virtualbox  # requires an Intel processor (it's an x86 hypervisor, not an emulator)
+  - visual-studio-code
+  - vlc
+  - zoom
+
+# Homebrew formulae (packages for command-line macOS applications)
 homebrew_formulae:
   - bmon
   - composer
