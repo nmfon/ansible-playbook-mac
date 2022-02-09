@@ -1,10 +1,36 @@
 ---
 
+# Ansible config
+ansible_connection: local
+
 # Python version
 python_version: "3.10"
 
-# Ansible config
-ansible_connection: local
+
+# MacOS defaults
+macos_defaults:
+  - domain: NSGlobalDomain
+    key: AppleShowAllExtensions  # Show all filename extensions in Finder
+    type: bool
+    value: "true"
+  - domain: NSGlobalDomain
+    key: NSAutomaticCapitalizationEnabled  # Do not auto-capitalise the first word of each line in Notes, etc.
+    type: bool
+    value: "false"
+  - domain: com.apple.finder
+    key: AppleShowAllFiles  # Show dot files in Finder
+    type: string
+    value: "true"
+  - domain: com.apple.screencapture
+    key: disable-shadow  # Do not render a shadow/border for screen shots
+    type: bool
+    value: "true"
+
+# Processes to relauch after configuring MacOS defaults
+macos_processes_to_relaunch:
+  - Finder
+  - SystemUIServer
+
 
 # Homebrew taps (repos for thrid-party brew formulae)
 homebrew_taps:
@@ -71,10 +97,12 @@ homebrew_formulae:
   - watch
   - wget
 
+
 # Node.js packages
 nodejs_packages:
   - newman
   - newman-reporter-html
+
 
 # Python packages
 pip_packages:
@@ -95,6 +123,7 @@ pip_packages:
   - PyYAML
   - shyaml
   - virtualenv
+
 
 # Visual Studio Code extensions
 vscode_extensions:

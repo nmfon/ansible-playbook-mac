@@ -1,5 +1,23 @@
 ---
 
+# Configure macOS user defaults, same as "defaults write ..."
+
+  - name: configure defaults
+    osx_defaults:
+      domain: "{{ item.domain }}"
+      key: "{{ item.key }}"
+      type: "{{ item.type }}"
+      value: "{{ item.value }}"
+      state: present
+    loop: "{{ macos_defaults }}"
+
+# Relaunch processes to apply macOS user defaults
+
+  - name: relaunch processes (to apply defaults)
+    command: "killall {{ item }}"
+    loop: "{{ macos_processes_to_relaunch }}"
+
+
 # Configure shells
 
   - name: template .bash_profile
