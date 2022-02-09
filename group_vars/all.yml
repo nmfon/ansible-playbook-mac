@@ -34,6 +34,7 @@ macos_processes_to_relaunch:
 
 # Homebrew taps (repos for thrid-party brew formulae)
 homebrew_taps:
+  - homebrew/cask-fonts
 #  - pingidentity/devops  # deprecated
   - pingidentity/tap  # new
 
@@ -44,6 +45,7 @@ homebrew_casks:
   - beyond-compare
   - box-sync
   - docker
+  - font-meslo-for-powerline # requires homebrew tap "homebrew/cask-fonts"
   - google-chrome
   - iterm2
   - kindle
