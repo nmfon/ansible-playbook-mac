@@ -1,7 +1,0 @@
-# shellcheck shell=bash
-
-# No longer using bash, as of 2019
-# Now using zsh + oh-my-zsh (see .zshrc for config)
-
-# Load bash-completion
-#[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion

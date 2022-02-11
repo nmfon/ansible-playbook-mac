@@ -18,13 +18,7 @@
     loop: "{{ macos_processes_to_relaunch }}"
 
 
-# Configure shells
-
-  - name: template .bash_profile
-    template:
-      src: templates/bash/bash_profile
-      dest: $HOME/.bash_profile
-      mode: 0644
+# Configure shell (zsh)
 
   - name: install oh-my-zsh
     shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
