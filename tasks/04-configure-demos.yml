@@ -1,0 +1,31 @@
+---
+
+# Configure Ping DevOps environment
+# https://devops.pingidentity.com/get-started/getStarted/
+
+  # Some of the Ping DevOps examples (e.g. for docker compose) contain hardcoded
+  # references to the default Ping DevOps home directory (~/projects/devops), so
+  # just stick with this value, until this issue is fixed.
+  - name: create Ping DevOps home directory
+    file:
+      path: $HOME/projects/devops
+      state: directory
+      mode: 0755
+
+  - name: create Ping DevOps config directory
+    file:
+      path: $HOME/.pingidentity/
+      state: directory
+      mode: 0755
+
+  # Some of the Ping DevOps examples (e.g. for docker compose) still reference
+  # the old config file name (~/.pingidentity/devops) created by the deprecated
+  # ping-devops utility, so as a workaround, symlink it to the new config file
+  # name (~/.pingidentity/config) created by the newer pingctl utility.
+  - name: create symlink for old Ping DevOps config file
+    file:
+      src: $HOME/.pingidentity/config
+      dest: $HOME/.pingidentity/devops
+      state: link
+      mode: 0755
+      force: yes
