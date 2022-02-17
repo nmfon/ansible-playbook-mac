@@ -58,8 +58,9 @@ homebrew_casks:
   - skype-for-business  # requires Rosetta 2
   - slack
 #  - spectacle  # install broken
+  - utm
   - vagrant
-#  - virtualbox  # requires an Intel processor (it's an x86 hypervisor, not an emulator)
+#  - virtualbox  # requires an Intel processor (it's an x86 hypervisor, not an emulator)... use utm instead
   - visual-studio-code
   - vlc
   - zoom
