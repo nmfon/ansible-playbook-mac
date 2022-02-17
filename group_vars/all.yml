@@ -67,6 +67,7 @@ homebrew_casks:
 
 # Homebrew formulae (packages for command-line macOS applications)
 homebrew_formulae:
+  - bash
   - bmon
   - composer
   - coreutils
