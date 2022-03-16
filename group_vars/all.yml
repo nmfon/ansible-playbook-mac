@@ -37,6 +37,7 @@ homebrew_taps:
   - homebrew/cask-fonts
 #  - pingidentity/devops  # deprecated
   - pingidentity/tap  # new
+  - stax-labs/homebrew-taps
 
 # Homebrew casks (packages for GUI macOS applications)
 homebrew_casks:
@@ -96,6 +97,7 @@ homebrew_formulae:
   - saml2aws
   - shellcheck
   - sshuttle
+  - stax2aws
   - terraform
   - tree
   - watch
