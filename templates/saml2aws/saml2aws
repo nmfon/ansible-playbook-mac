@@ -249,6 +249,59 @@ aws_profile          = bendigo--ping-prod--secretsmanagement
 role_arn             = arn:aws:iam::703238125759:role/ADFS-SecretsManagement
 
 
+# Flybuys (Stax)
+
+# Generic profile (saml2aws login will prompt for a role)
+[flybuys]
+url                  = https://id.security.flybuys.au1.staxapp.cloud/auth/realms/master/protocol/saml/clients/amazon-aws
+username             = nicholas.fone@versent.com.au
+provider             = KeyCloak
+mfa                  = Auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = https://id.security.flybuys.au1.staxapp.cloud/auth/realms/master
+aws_session_duration = 3600
+aws_profile          = flybuys
+role_arn             =
+
+
+[flybuys--core-build-dev-001--admin]
+url                  = https://id.security.flybuys.au1.staxapp.cloud/auth/realms/master/protocol/saml/clients/amazon-aws
+username             = nicholas.fone@versent.com.au
+provider             = KeyCloak
+mfa                  = Auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = https://id.security.flybuys.au1.staxapp.cloud/auth/realms/master
+aws_session_duration = 3600
+aws_profile          = flybuys--core-build-dev-001--admin
+role_arn             = arn:aws:iam::628182649335:role/staxid-admin-role
+
+[flybuys--core-build-dev-001--developer]
+url                  = https://id.security.flybuys.au1.staxapp.cloud/auth/realms/master/protocol/saml/clients/amazon-aws
+username             = nicholas.fone@versent.com.au
+provider             = KeyCloak
+mfa                  = Auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = https://id.security.flybuys.au1.staxapp.cloud/auth/realms/master
+aws_session_duration = 3600
+aws_profile          = flybuys--core-build-dev-001--developer
+role_arn             = arn:aws:iam::628182649335:role/staxid-developer-role
+
+[flybuys--core-build-dev-001--readonly]
+url                  = https://id.security.flybuys.au1.staxapp.cloud/auth/realms/master/protocol/saml/clients/amazon-aws
+username             = nicholas.fone@versent.com.au
+provider             = KeyCloak
+mfa                  = Auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = https://id.security.flybuys.au1.staxapp.cloud/auth/realms/master
+aws_session_duration = 3600
+aws_profile          = flybuys--core-build-dev-001--readonly
+role_arn             = arn:aws:iam::628182649335:role/staxid-readonly-role
+
+
 # Transurban (non-Stax)
 
 # Generic profile (saml2aws login will prompt for a role)

@@ -78,6 +78,42 @@ region = ap-southeast-2
 region = ap-southeast-2
 
 
+# Flybuys (Stax)
+
+[profile flybuys]
+region = ap-southeast-2
+
+
+[profile flybuys--core-build-dev-001--admin]
+region = ap-southeast-2
+
+[profile flybuys--core-build-dev-001--developer]
+region = ap-southeast-2
+
+[profile flybuys--core-build-dev-001--readonly]
+region = ap-southeast-2
+
+
+[profile flybuys--core-build-test-001--admin]
+region = ap-southeast-2
+
+[profile flybuys--core-build-test-001--developer]
+region = ap-southeast-2
+
+[profile flybuys--core-build-test-001--readonly]
+region = ap-southeast-2
+
+
+[profile flybuys--core-build-prod-001--admin]
+region = ap-southeast-2
+
+[profile flybuys--core-build-prod-001--developer]
+region = ap-southeast-2
+
+[profile flybuys--core-build-prod-001--readonly]
+region = ap-southeast-2
+
+
 # Transurban (non-Stax)
 
 [profile tu]
