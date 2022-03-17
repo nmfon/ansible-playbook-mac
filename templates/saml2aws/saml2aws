@@ -1,40 +1,70 @@
-# Versent
+# My naming convention for saml2aws profiles:
+#   - Stax:      STAX_ORG_ALIAS[--AWS_ACCOUNT_NAME[--IAM_ROLE_NAME]]
+#   - Non-Stax:  COMPANY[--AWS_ACCOUNT_NAME[--IAM_ROLE_NAME]]
 
-# https://versent.atlassian.net/wiki/spaces/BLME/pages/98054229/Accessing+Versent+Innovation+account+sandpit
-# This still works, but can now use Stax... see below.
-[versent]
-app_id               =
-url                  = https://id.versent.com.au
-username             = nicholas.fone@versent.com.au
-provider             = Ping
-mfa                  = Auto
-skip_verify          = false
-timeout              = 0
-aws_urn              = urn:amazon:webservices
-aws_session_duration = 3600
-aws_profile          = versent
-subdomain            =
-role_arn             =
+# Fields for saml2aws profiles are defined (and *required* fields are validated) here:
+# https://github.com/Versent/saml2aws/blob/master/pkg/cfg/cfg.go
 
+
+# Versent (Stax)
+
+# Generic profile (saml2aws login will prompt for a role) for all AWS accounts
+# in the "versent-innovation" Stax organisation, as per:
 # https://versent.atlassian.net/wiki/spaces/STAX/pages/752551020/How+to+use+Stax+and+Versent+innovation
-[stax-innovation]
-app_id               =
+[versent-innovation]
 url                  = https://id.versent.com.au
 username             = nicholas.fone@versent.com.au
 provider             = Ping
 mfa                  = Auto
 skip_verify          = false
 timeout              = 0
-aws_urn              = https://id.security.versent-innovation.test.juma.cloud/auth/realms/master
+aws_urn              = https://id.security.versent-innovation.au1.staxapp.cloud/auth/realms/master
 aws_session_duration = 3600
-aws_profile          = stax-innovation
-subdomain            =
+aws_profile          = versent-innovation
 role_arn             =
 
-# Customers
 
-[bendigo-sandbox]
-app_id               =
+[versent-innovation--innovation-shared--admin]
+url                  = https://id.versent.com.au
+username             = nicholas.fone@versent.com.au
+provider             = Ping
+mfa                  = Auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = https://id.security.versent-innovation.au1.staxapp.cloud/auth/realms/master
+aws_session_duration = 3600
+aws_profile          = versent-innovation--innovation-shared--admin
+role_arn             = arn:aws:iam::272435851616:role/staxid-admin-role
+
+[versent-innovation--innovation-shared--developer]
+url                  = https://id.versent.com.au
+username             = nicholas.fone@versent.com.au
+provider             = Ping
+mfa                  = Auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = https://id.security.versent-innovation.au1.staxapp.cloud/auth/realms/master
+aws_session_duration = 3600
+aws_profile          = versent-innovation--innovation-shared--developer
+role_arn             = arn:aws:iam::272435851616:role/staxid-developer-role
+
+[versent-innovation--innovation-shared--readonly]
+url                  = https://id.versent.com.au
+username             = nicholas.fone@versent.com.au
+provider             = Ping
+mfa                  = Auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = https://id.security.versent-innovation.au1.staxapp.cloud/auth/realms/master
+aws_session_duration = 3600
+aws_profile          = versent-innovation--innovation-shared--readonly
+role_arn             = arn:aws:iam::272435851616:role/staxid-readonly-role
+
+
+# Bendigo Bank (non-Stax)
+
+# Generic profile (saml2aws login will prompt for a role)
+[bendigo]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -43,13 +73,23 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-sandbox
-resource_id          =
-subdomain            =
+aws_profile          = bendigo
+role_arn             =
+
+
+[bendigo--ping-sandbox--adfs]
+url                  = https://adfs.bendigoadelaide.com.au/
+username             = Nicholas.Fone@bendigoadelaide.com.au
+provider             = ADFS
+mfa                  = VIP
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = bendigo--ping-sandbox--adfs
 role_arn             = arn:aws:iam::597778058138:role/ADFS-Sandbox
 
-[bendigo-sandbox-s3readonly]
-app_id               =
+[bendigo--ping-sandbox--s3readonly]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -58,13 +98,11 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-sandbox-s3readonly
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-sandbox--s3readonly
 role_arn             = arn:aws:iam::597778058138:role/ADFS-S3RO-CMK-s3-readonly
 
-[bendigo-dev-breakglass]
-app_id               =
+
+[bendigo--ping-dev--breakglass]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -73,13 +111,10 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-dev-breakglass
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-dev--breakglass
 role_arn             = arn:aws:iam::459523021439:role/ADFS-BreakGlass
 
-[bendigo-dev-eksadmin]
-app_id               =
+[bendigo--ping-dev--eksadmin]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -88,13 +123,10 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-dev-eksadmin
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-dev--eksadmin
 role_arn             = arn:aws:iam::459523021439:role/ADFS-EKSAdmin
 
-[bendigo-dev-s3readonly]
-app_id               =
+[bendigo--ping-dev--s3readonly]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -103,13 +135,10 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-dev-s3readonly
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-dev--s3readonly
 role_arn             = arn:aws:iam::459523021439:role/ADFS-S3RO-CMK-s3-readonly
 
-[bendigo-dev-secretsmanagement]
-app_id               =
+[bendigo--ping-dev--secretsmanagement]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -118,13 +147,11 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-dev-secretsmanagement
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-dev--secretsmanagement
 role_arn             = arn:aws:iam::459523021439:role/ADFS-SecretsManagement
 
-[bendigo-nonprod-breakglass]
-app_id               =
+
+[bendigo--ping-nonprod--breakglass]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -133,13 +160,10 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-nonprod-breakglass
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-nonprod--breakglass
 role_arn             = arn:aws:iam::414424376303:role/ADFS-BreakGlass
 
-[bendigo-nonprod-eksadmin]
-app_id               =
+[bendigo--ping-nonprod--eksadmin]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -148,13 +172,10 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-nonprod-eksadmin
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-nonprod--eksadmin
 role_arn             = arn:aws:iam::414424376303:role/ADFS-EKSAdmin
 
-[bendigo-nonprod-s3readonly]
-app_id               =
+[bendigo--ping-nonprod--s3readonly]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -163,13 +184,10 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-nonprod-s3readonly
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-nonprod--s3readonly
 role_arn             = arn:aws:iam::414424376303:role/ADFS-S3RO-CMK-s3-readonly
 
-[bendigo-nonprod-secretsmanagement]
-app_id               =
+[bendigo--ping-nonprod--secretsmanagement]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -178,13 +196,11 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-nonprod-secretsmanagement
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-nonprod--secretsmanagement
 role_arn             = arn:aws:iam::414424376303:role/ADFS-SecretsManagement
 
-[bendigo-prod-breakglass]
-app_id               =
+
+[bendigo--ping-prod--breakglass]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -193,13 +209,10 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-prod-breakglass
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-prod--breakglass
 role_arn             = arn:aws:iam::703238125759:role/ADFS-BreakGlass
 
-[bendigo-prod-eksadmin]
-app_id               =
+[bendigo--ping-prod--eksadmin]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -208,13 +221,10 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-prod-eksadmin
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-prod--eksadmin
 role_arn             = arn:aws:iam::703238125759:role/ADFS-EKSAdmin
 
-[bendigo-prod-s3readonly]
-app_id               =
+[bendigo--ping-prod--s3readonly]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -223,13 +233,10 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-prod-s3readonly
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-prod--s3readonly
 role_arn             = arn:aws:iam::703238125759:role/ADFS-S3RO-CMK-s3-readonly
 
-[bendigo-prod-secretsmanagement]
-app_id               =
+[bendigo--ping-prod--secretsmanagement]
 url                  = https://adfs.bendigoadelaide.com.au/
 username             = Nicholas.Fone@bendigoadelaide.com.au
 provider             = ADFS
@@ -238,13 +245,14 @@ skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
-aws_profile          = bendigo-prod-secretsmanagement
-resource_id          =
-subdomain            =
+aws_profile          = bendigo--ping-prod--secretsmanagement
 role_arn             = arn:aws:iam::703238125759:role/ADFS-SecretsManagement
 
+
+# Transurban (non-Stax)
+
+# Generic profile (saml2aws login will prompt for a role)
 [tu]
-app_id               =
 url                  = https://id.transurban.com
 username             = nfone@transurban.com
 provider             = ADFS
@@ -254,6 +262,4 @@ timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 3600
 aws_profile          = tu
-resource_id          =
-subdomain            =
 role_arn             =
