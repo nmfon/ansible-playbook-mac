@@ -107,8 +107,21 @@ source $ZSH/oh-my-zsh.sh
 # My customisations
 
 
-# Remove username@hostname from prompt (when logged in as myself on localhost)
+# Remove username@hostname from LPROMPT (when logged in as myself on localhost)
 DEFAULT_USER=$USER
+
+
+# Prevent "aws" plugin from displaying AWS profile name in RPROMPT,
+# since it's already displayed in LPROMPT by "agnoster" theme.
+
+# Currently, setting the following env var removes the AWS profile name
+# from *both* the LPROMPT and the RPROMPT:
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws#plugin-options
+# SHOW_AWS_PROMPT=false
+
+# Workaround, override the aws_prompt_info function:
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws#theme
+aws_prompt_info(){}
 
 
 # Java home
