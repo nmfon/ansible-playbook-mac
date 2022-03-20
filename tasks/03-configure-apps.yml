@@ -19,6 +19,9 @@
   - name: configure git core.pager
     command: git config --global core.pager "less -F -X"
 
+  - name: configure git init.defaultBranch
+    command: git config --global init.defaultBranch "main"
+
   - name: configure git pull.ff
     command: git config --global pull.ff "only"
 
