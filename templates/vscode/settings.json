@@ -57,6 +57,10 @@
     // Disable VS Code telemetry (for privacy)
     "telemetry.telemetryLevel": "off",
 
+    // Set font for integrated terminal (reqired to render special chars in the prompt,
+    // which is configured by the OhMyZsh agnoster theme)
+    "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
+
     // Zoom in a bit :)
     "window.zoomLevel": 1,
 
