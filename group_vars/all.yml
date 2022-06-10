@@ -98,6 +98,7 @@ homebrew_formulae:
   - shellcheck
   - sshuttle
   - stax2aws
+  - telnet
   - terraform
   - tree
   - watch
