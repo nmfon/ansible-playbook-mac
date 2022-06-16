@@ -33,3 +33,11 @@ Run the playbook to configure your Mac:
 export PATH=${HOME}/Library/Python/${PYTHON_VERSION}/bin:${PATH}  # user site pacakges for python
 ansible-playbook -i "localhost," --ask-become-pass playbook.yml
 ```
+
+## Credits
+
+This playbook is a more minimal implementation of several other fantastic projects, including:
+
+- [MacDevPlaybook](https://github.com/geerlingguy/mac-dev-playbook) (Jeff Geerling)
+- [Strap](https://github.com/MikeMcQuaid/strap) (Mike McQuaid)
+- [SuperLumic](https://github.com/superlumic/superlumic) (Roderik van der Veer)
