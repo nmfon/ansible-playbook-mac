@@ -82,6 +82,7 @@ homebrew_formulae:
   - helm
   - jq
   - k9s
+  - kops
   - kubectl
   - kubectx
   - kustomize
