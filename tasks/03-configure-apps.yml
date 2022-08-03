@@ -34,14 +34,6 @@
   - name: configure git user.useConfigOnly (force user to set user and email)
     command: git config --global user.useConfigOnly "true"
 
-# Configure saml2aws
-
-  - name: template .saml2aws
-    template:
-      src: templates/saml2aws/saml2aws
-      dest: $HOME/.saml2aws
-      mode: 0644
-
 # Configure Visual Studio Code
 
   - name: template vscode settings.json
