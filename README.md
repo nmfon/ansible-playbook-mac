@@ -14,13 +14,15 @@ xcode-select --install
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install Python (includes pip3)
 brew install python@${PYTHON_VERSION}
-
-# Install Ansible
 export PATH=/opt/homebrew/opt/python@${PYTHON_VERSION}/libexec/bin:${PATH}  # symlinks for generic python executables
 export PATH=/opt/homebrew/opt/python@${PYTHON_VERSION}/bin:${PATH}  # symlinks for version-specific python executables
+export PATH=${HOME}/Library/Python/${PYTHON_VERSION}/bin:${PATH}  # user-installed python executables
+
+# Install Ansible
 pip3 install --upgrade --user ansible
 ```
 
@@ -30,7 +32,6 @@ Run the playbook to configure your Mac:
 
 ```bash
 # Run Ansible playbook
-export PATH=${HOME}/Library/Python/${PYTHON_VERSION}/bin:${PATH}  # user site pacakges for python
 ansible-playbook -i "localhost," --ask-become-pass playbook.yml
 ```
 
