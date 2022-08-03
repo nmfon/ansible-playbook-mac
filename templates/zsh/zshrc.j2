@@ -156,6 +156,9 @@ export PATH="$GOPATH/bin:$PATH"
 # MacPorts bin path
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
+# Homebrew environment
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Python binary paths
 export PATH="/opt/homebrew/opt/python@{{ python_version }}/libexec/bin:$PATH"  # symlinks for generic python executables
 export PATH="/opt/homebrew/opt/python@{{ python_version }}/bin:$PATH"  # symlinks for version-specific python executables
