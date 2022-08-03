@@ -47,24 +47,24 @@ homebrew_casks:
   - box-sync
   - docker
   - font-meslo-for-powerline # requires homebrew tap "homebrew/cask-fonts"
-  - google-chrome
+#  - google-chrome  # already installed via Self Service application (Nearmap)
   - iterm2
   - kindle
   - kitematic
-  - microsoft-office
+#  - microsoft-office  # already installed via Self Service application (Nearmap)
   - microsoft-remote-desktop
   - microsoft-teams  # requires Rosetta 2
   - openconnect-gui
   - postman
   - skype-for-business  # requires Rosetta 2
-  - slack
+#  - slack  # already installed via Self Service application (Nearmap)
 #  - spectacle  # install broken
   - utm
   - vagrant
 #  - virtualbox  # requires an Intel processor (it's an x86 hypervisor, not an emulator)... use utm instead
   - visual-studio-code
   - vlc
-  - zoom
+#  - zoom  # already installed via Self Service application (Nearmap)
 
 # Homebrew formulae (packages for command-line macOS applications)
 homebrew_formulae:
