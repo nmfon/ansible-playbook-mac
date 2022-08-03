@@ -1,6 +1,5 @@
 # My naming convention for aws profiles:
-#   - Stax:      STAX_ORG_ALIAS[--AWS_ACCOUNT_NAME[--IAM_ROLE_NAME]]
-#   - Non-Stax:  COMPANY[--AWS_ACCOUNT_NAME[--IAM_ROLE_NAME]]
+# COMPANY[--AWS_ACCOUNT_NAME[--IAM_ROLE_NAME]]
 
 # Fields for aws profiles are documented here:
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html#cli-configure-files-settings
@@ -10,111 +9,31 @@
 region = ap-southeast-2
 
 
-# Versent (Stax)
+# Nearmap
 
-[profile versent-innovation]
+[profile nearmap-labs-developers]
 region = ap-southeast-2
-
-
-[profile versent-innovation--innovation-shared--admin]
+output = json
+adfs_config.ssl_verification = True
+adfs_config.role_arn = arn:aws:iam::123390401142:role/developers
+adfs_config.adfs_host = adfs.nearmap.com
+adfs_config.adfs_user = nick.fone@nearmap.com
+adfs_config.session_duration = 21600
+ 
+[profile nearmap-dev-developers]
 region = ap-southeast-2
-
-[profile versent-innovation--innovation-shared--developer]
+output = json
+adfs_config.ssl_verification = True
+adfs_config.role_arn = arn:aws:iam::961173933985:role/developers
+adfs_config.adfs_host = adfs.nearmap.com
+adfs_config.adfs_user = nick.fone@nearmap.com
+adfs_config.session_duration = 21600
+ 
+[profile nearmap-prod-readonly]
 region = ap-southeast-2
-
-[profile versent-innovation--innovation-shared--readonly]
-region = ap-southeast-2
-
-
-# Bendigo Bank (non-Stax)
-
-[profile bendigo]
-region = ap-southeast-2
-
-
-[profile bendigo--ping-sandbox--adfs]
-region = ap-southeast-2
-
-[profile bendigo--ping-sandbox--s3readonly]
-region = ap-southeast-2
-
-
-[profile bendigo--ping-dev--breakglass]
-region = ap-southeast-2
-
-[profile bendigo--ping-dev--eksadmin]
-region = ap-southeast-2
-
-[profile bendigo--ping-dev--s3readonly]
-region = ap-southeast-2
-
-[profile bendigo--ping-dev--secretsmanagement]
-region = ap-southeast-2
-
-
-[profile bendigo--ping-nonprod--breakglass]
-region = ap-southeast-2
-
-[profile bendigo--ping-nonprod--eksadmin]
-region = ap-southeast-2
-
-[profile bendigo--ping-nonprod--s3readonly]
-region = ap-southeast-2
-
-[profile bendigo--ping-nonprod--secretsmanagement]
-region = ap-southeast-2
-
-
-[profile bendigo--ping-prod--breakglass]
-region = ap-southeast-2
-
-[profile bendigo--ping-prod--eksadmin]
-region = ap-southeast-2
-
-[profile bendigo--ping-prod--s3readonly]
-region = ap-southeast-2
-
-[profile bendigo--ping-prod--secretsmanagement]
-region = ap-southeast-2
-
-
-# Flybuys (Stax)
-
-[profile flybuys]
-region = ap-southeast-2
-
-
-[profile flybuys--core-build-dev-001--admin]
-region = ap-southeast-2
-
-[profile flybuys--core-build-dev-001--developer]
-region = ap-southeast-2
-
-[profile flybuys--core-build-dev-001--readonly]
-region = ap-southeast-2
-
-
-[profile flybuys--core-build-test-001--admin]
-region = ap-southeast-2
-
-[profile flybuys--core-build-test-001--developer]
-region = ap-southeast-2
-
-[profile flybuys--core-build-test-001--readonly]
-region = ap-southeast-2
-
-
-[profile flybuys--core-build-prod-001--admin]
-region = ap-southeast-2
-
-[profile flybuys--core-build-prod-001--developer]
-region = ap-southeast-2
-
-[profile flybuys--core-build-prod-001--readonly]
-region = ap-southeast-2
-
-
-# Transurban (non-Stax)
-
-[profile tu]
-region = ap-southeast-2
+output = json
+adfs_config.ssl_verification = True
+adfs_config.role_arn = arn:aws:iam::973383851042:role/readonly
+adfs_config.adfs_host = adfs.nearmap.com
+adfs_config.adfs_user = nick.fone@nearmap.com
+adfs_config.session_duration = 21600

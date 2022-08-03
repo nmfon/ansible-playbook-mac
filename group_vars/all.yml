@@ -118,6 +118,7 @@ pip_packages:
   - ansible         # Ansible docs recommend installation via pip
   - ansible-lint
   - awscli
+  - aws-adfs
   - aws-ssm-copy
   - boto
   - boto3

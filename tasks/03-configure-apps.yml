@@ -1,6 +1,6 @@
 ---
 
-# Configure AWS CLI
+# Configure AWS CLI (for use with aws-adfs)
 
   - name: create .aws/ directory
     file:
