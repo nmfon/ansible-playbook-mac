@@ -36,6 +36,12 @@
 
 # Configure Visual Studio Code
 
+  - name: create vscode user directory
+    file:
+      path: $HOME/Library/Application Support/Code/User
+      state: directory
+      mode: 0755
+
   - name: template vscode settings.json
     template:
       src: templates/vscode/settings.json
