@@ -11,29 +11,107 @@ region = ap-southeast-2
 
 # Nearmap
 
-[profile nearmap-labs-developers]
+[profile ai-dev]
 region = ap-southeast-2
 output = json
 adfs_config.ssl_verification = True
-adfs_config.role_arn = arn:aws:iam::123390401142:role/developers
+adfs_config.role_arn = arn:aws:iam::329866267174:role/admin
 adfs_config.adfs_host = adfs.nearmap.com
 adfs_config.adfs_user = nick.fone@nearmap.com
 adfs_config.session_duration = 21600
- 
-[profile nearmap-dev-developers]
+adfs_config.provider_id = urn:amazon:webservices
+adfs_config.sspi = False
+adfs_config.duo_factor = None
+adfs_config.duo_device = None
+
+[profile ai-prod]
 region = ap-southeast-2
 output = json
 adfs_config.ssl_verification = True
-adfs_config.role_arn = arn:aws:iam::961173933985:role/developers
+adfs_config.role_arn = arn:aws:iam::871430721921:role/admin
 adfs_config.adfs_host = adfs.nearmap.com
 adfs_config.adfs_user = nick.fone@nearmap.com
 adfs_config.session_duration = 21600
- 
-[profile nearmap-prod-readonly]
+adfs_config.provider_id = urn:amazon:webservices
+adfs_config.sspi = False
+adfs_config.duo_factor = None
+adfs_config.duo_device = None
+
+[profile corporate-dev-and-prod]
 region = ap-southeast-2
 output = json
 adfs_config.ssl_verification = True
-adfs_config.role_arn = arn:aws:iam::973383851042:role/readonly
+adfs_config.role_arn = arn:aws:iam::714783706437:role/admin
 adfs_config.adfs_host = adfs.nearmap.com
 adfs_config.adfs_user = nick.fone@nearmap.com
 adfs_config.session_duration = 21600
+adfs_config.provider_id = urn:amazon:webservices
+adfs_config.sspi = False
+adfs_config.duo_factor = None
+adfs_config.duo_device = None
+
+[profile eng-dev]
+region = ap-southeast-2
+output = json
+adfs_config.ssl_verification = True
+adfs_config.role_arn = arn:aws:iam::961173933985:role/admin
+adfs_config.adfs_host = adfs.nearmap.com
+adfs_config.adfs_user = nick.fone@nearmap.com
+adfs_config.session_duration = 21600
+adfs_config.provider_id = urn:amazon:webservices
+adfs_config.sspi = False
+adfs_config.duo_factor = None
+adfs_config.duo_device = None
+
+[profile eng-prod]
+region = ap-southeast-2
+output = json
+adfs_config.ssl_verification = True
+adfs_config.role_arn = arn:aws:iam::973383851042:role/admin
+adfs_config.adfs_host = adfs.nearmap.com
+adfs_config.adfs_user = nick.fone@nearmap.com
+adfs_config.session_duration = 21600
+adfs_config.provider_id = urn:amazon:webservices
+adfs_config.sspi = False
+adfs_config.duo_factor = None
+adfs_config.duo_device = None
+
+[profile labs]
+region = ap-southeast-2
+output = json
+adfs_config.ssl_verification = True
+adfs_config.role_arn = arn:aws:iam::123390401142:role/admin
+adfs_config.adfs_host = adfs.nearmap.com
+adfs_config.adfs_user = nick.fone@nearmap.com
+adfs_config.session_duration = 21600
+adfs_config.provider_id = urn:amazon:webservices
+adfs_config.sspi = False
+adfs_config.duo_factor = None
+adfs_config.duo_device = None
+
+[profile tech-dev]
+region = ap-southeast-2
+output = json
+adfs_config.ssl_verification = True
+adfs_config.role_arn = arn:aws:iam::734606388143:role/admin
+adfs_config.adfs_host = adfs.nearmap.com
+adfs_config.adfs_user = nick.fone@nearmap.com
+adfs_config.session_duration = 21600
+adfs_config.provider_id = urn:amazon:webservices
+adfs_config.sspi = False
+adfs_config.duo_factor = None
+adfs_config.duo_device = None
+
+[profile tech-prod]
+region = ap-southeast-2
+output = json
+adfs_config.ssl_verification = True
+adfs_config.role_arn = arn:aws:iam::793922178593:role/admin
+adfs_config.adfs_host = adfs.nearmap.com
+adfs_config.adfs_user = nick.fone@nearmap.com
+adfs_config.session_duration = 21600
+adfs_config.provider_id = urn:amazon:webservices
+adfs_config.sspi = False
+adfs_config.duo_factor = None
+adfs_config.duo_device = None
+
