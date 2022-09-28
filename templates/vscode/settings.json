@@ -1,7 +1,7 @@
 {
     // CloudFormation Linter plugin
     // Path to the cfn-lint binary
-    "cfnLint.path": "/usr/local/bin/cfn-lint",
+    "cfnLint.path": "cfn-lint",
 
     // Show changes to trailing whitespace
     "diffEditor.ignoreTrimWhitespace": false,
