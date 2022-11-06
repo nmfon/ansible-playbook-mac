@@ -103,6 +103,7 @@ homebrew_formulae:
   - stax2aws  # requires homebrew tap "stax-labs/homebrew-taps"
   - telnet
   - terraform
+  - tflint
   - tree
   - watch
   - wget
