@@ -90,6 +90,7 @@ homebrew_formulae:
   - maven
   - m1-terraform-provider-helper  # requires homebrew tap "kreuzwerker/taps"
   - minikube
+  - mysql-client@5.7
   - node
   - openjdk
   - packer
