@@ -7,12 +7,14 @@
 
 [default]
 region = ap-southeast-2
+cli_pager =
 
 
 # Nearmap
 
 [profile ai-dev]
 region = ap-southeast-2
+cli_pager =
 output = json
 adfs_config.ssl_verification = True
 adfs_config.role_arn = arn:aws:iam::329866267174:role/admin
@@ -26,6 +28,7 @@ adfs_config.duo_device = None
 
 [profile ai-prod]
 region = ap-southeast-2
+cli_pager =
 output = json
 adfs_config.ssl_verification = True
 adfs_config.role_arn = arn:aws:iam::871430721921:role/admin
@@ -39,6 +42,7 @@ adfs_config.duo_device = None
 
 [profile corporate-dev-and-prod]
 region = ap-southeast-2
+cli_pager =
 output = json
 adfs_config.ssl_verification = True
 adfs_config.role_arn = arn:aws:iam::714783706437:role/admin
@@ -52,6 +56,7 @@ adfs_config.duo_device = None
 
 [profile eng-dev]
 region = ap-southeast-2
+cli_pager =
 output = json
 adfs_config.ssl_verification = True
 adfs_config.role_arn = arn:aws:iam::961173933985:role/admin
@@ -65,6 +70,7 @@ adfs_config.duo_device = None
 
 [profile eng-prod]
 region = ap-southeast-2
+cli_pager =
 output = json
 adfs_config.ssl_verification = True
 adfs_config.role_arn = arn:aws:iam::973383851042:role/admin
@@ -78,6 +84,7 @@ adfs_config.duo_device = None
 
 [profile labs]
 region = ap-southeast-2
+cli_pager =
 output = json
 adfs_config.ssl_verification = True
 adfs_config.role_arn = arn:aws:iam::123390401142:role/admin
@@ -91,6 +98,7 @@ adfs_config.duo_device = None
 
 [profile tech-dev]
 region = ap-southeast-2
+cli_pager =
 output = json
 adfs_config.ssl_verification = True
 adfs_config.role_arn = arn:aws:iam::734606388143:role/admin
@@ -104,6 +112,7 @@ adfs_config.duo_device = None
 
 [profile tech-prod]
 region = ap-southeast-2
+cli_pager =
 output = json
 adfs_config.ssl_verification = True
 adfs_config.role_arn = arn:aws:iam::793922178593:role/admin
