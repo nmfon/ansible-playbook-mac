@@ -159,6 +159,9 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Homebrew environment
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# MySQL client binary path
+export PATH="/opt/homebrew/opt/mysql-client@5.7/bin:$PATH"
+
 # Python binary paths
 export PATH="/opt/homebrew/opt/python@{{ python_version }}/libexec/bin:$PATH"  # symlinks for generic python executables
 export PATH="/opt/homebrew/opt/python@{{ python_version }}/bin:$PATH"  # symlinks for version-specific python executables
