@@ -252,4 +252,5 @@ function tu-proxy-disable() {
 }
 
 # Ping Identity - Added with 'pingctl config' on Tue  8 Feb 2022 11:51:50 AEDT
-test -f '/Users/nicholasfone/.pingidentity/config' && source '/Users/nicholasfone/.pingidentity/config'
+# Updated to reference HOME
+test -f "$HOME/.pingidentity/config" && source "$HOME/.pingidentity/config"
