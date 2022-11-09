@@ -69,6 +69,7 @@ homebrew_casks:
 
 # Homebrew formulae (packages for command-line macOS applications)
 homebrew_formulae:
+  - awscli@2
   - bash
   - bmon
   - composer
@@ -122,7 +123,7 @@ pip_packages:
   - six             # Version bundled with Mac OS is very old
   - ansible         # Ansible docs recommend installation via pip
   - ansible-lint
-  - awscli
+#  - awscli
   - aws-adfs
   - aws-ssm-copy
   - boto
