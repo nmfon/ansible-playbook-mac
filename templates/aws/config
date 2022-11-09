@@ -8,6 +8,7 @@
 [default]
 region = ap-southeast-2
 cli_pager =
+output = json
 
 
 # Nearmap
