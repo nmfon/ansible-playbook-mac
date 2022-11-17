@@ -131,6 +131,7 @@ pip_packages:
   - cfn-lint
   - cfn_flip
   - docker
+  - git-remote-codecommit
   - jinja2
   - pylint
   - pyOpenSSL       # Required by awscli, per https://github.com/aws/aws-cli/issues/4708
