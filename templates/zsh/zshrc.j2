@@ -181,9 +181,34 @@ export PATH="$HOME/bin:$PATH"
 
 
 # Aliases
-alias git-nearmap='cd ~/repos/github/nearmap/'
-alias git-nmfon='cd ~/repos/github/nmfon/'
-alias git-ping='cd ~/repos/github/pingidentity/'
+alias ai-dev='aws-ai-dev; github-nearmap-ai-dev'
+alias ai-prod='aws-ai-prod; github-nearmap-ai-prod'
+alias eng-dev='aws-eng-dev; github-nearmap-eng-dev'
+alias eng-prod='aws-eng-prod; github-nearmap-eng-prod'
+alias gitlab-dev='aws-eng-dev; codecommit-gitlab-dev'
+alias gitlab-prod='aws-eng-prod; codecommit-gitlab-prod'
+alias tech-dev='aws-tech-dev; github-nearmap-tech-dev'
+alias tech-prod='aws-tech-prod; github-nearmap-tech-prod'
+
+alias aws-ai-dev='export AWS_PROFILE=ai-dev; aws-adfs login --profile ${AWS_PROFILE}'
+alias aws-ai-prod='export AWS_PROFILE=ai-prod; aws-adfs login --profile ${AWS_PROFILE}'
+alias aws-eng-dev='export AWS_PROFILE=eng-dev; aws-adfs login --profile ${AWS_PROFILE}'
+alias aws-eng-prod='export AWS_PROFILE=eng-prod; aws-adfs login --profile ${AWS_PROFILE}'
+alias aws-tech-dev='export AWS_PROFILE=tech-dev; aws-adfs login --profile ${AWS_PROFILE}'
+alias aws-tech-prod='export AWS_PROFILE=tech-prod; aws-adfs login --profile ${AWS_PROFILE}'
+
+alias codecommit-gitlab-dev='cd ~/repos/codecommit/eng-dev; if [ ! -d tf_infra_gitlab ]; then git clone codecommit://eng-dev@tf_infra_gitlab; fi; cd tf_infra_gitlab'
+alias codecommit-gitlab-prod='cd ~/repos/codecommit/eng-prod; if [ ! -d tf_infra_gitlab ]; then git clone codecommit://eng-prod@tf_infra_gitlab; fi; cd tf_infra_gitlab'
+alias github-nearmap='cd ~/repos/github/nearmap/'
+alias github-nearmap-ai-dev='cd ~/repos/github/nearmap/tf_infra_ai-dev'
+alias github-nearmap-ai-prod='cd ~/repos/github/nearmap/tf_infra_ai-prod'
+alias github-nearmap-eng-dev='cd ~/repos/github/nearmap/tf_infra_eng-dev'
+alias github-nearmap-eng-prod='cd ~/repos/github/nearmap/tf_infra_eng-prod'
+alias github-nearmap-tech-dev='cd ~/repos/github/nearmap/tf_infra_tech-dev'
+alias github-nearmap-tech-prod='cd ~/repos/github/nearmap/tf_infra_tech-prod'
+alias github-nmfon='cd ~/repos/github/nmfon/'
+alias github-ping='cd ~/repos/github/pingidentity/'
+
 
 # Workaround for the following ansible bug on Mac OS High Sierra (10.13):
 # https://github.com/ansible/ansible/issues/32499
