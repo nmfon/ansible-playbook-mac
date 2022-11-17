@@ -107,25 +107,27 @@ source $ZSH/oh-my-zsh.sh
 # My customisations
 
 
+##############
+# Zsh config #
+##############
+
 # Remove username@hostname from LPROMPT (when logged in as myself on localhost)
 DEFAULT_USER=$USER
 
-
 # Prevent "aws" plugin from displaying AWS profile name in RPROMPT,
 # since it's already displayed in LPROMPT by "agnoster" theme.
-
+#
 # Currently, setting the following env var removes the AWS profile name
 # from *both* the LPROMPT and the RPROMPT:
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws#plugin-options
 # SHOW_AWS_PROMPT=false
-
+#
 # Workaround, override the aws_prompt_info function:
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws#theme
 aws_prompt_info(){}
 
-
-{% raw %}
 # Add newline (and $) to prompt
+{% raw %}
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
     echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
@@ -139,48 +141,53 @@ prompt_end() {
 {% endraw %}
 
 
-# Java home
-export JAVA_HOME=/usr/local/opt/openjdk
+###############
+# Tool config #
+###############
 
-# Groovy home
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
+# Ansible
+# Workaround for the following ansible bug on Mac OS High Sierra (10.13):
+# https://github.com/ansible/ansible/issues/32499
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-
-# Java bin path
-export PATH="$JAVA_HOME/bin:$PATH"
-
-# Go path
+# Go
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
-# MacPorts bin path
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Groovy
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
-# Homebrew environment
+# Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# MySQL client binary path
+# Java
+export JAVA_HOME=/usr/local/opt/openjdk
+export PATH="$JAVA_HOME/bin:$PATH"
+
+# MacPorts
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
+# MySQL client
 export PATH="/opt/homebrew/opt/mysql-client@5.7/bin:$PATH"
 
-# Python binary paths
+# Python
 export PATH="/opt/homebrew/opt/python@{{ python_version }}/libexec/bin:$PATH"  # symlinks for generic python executables
 export PATH="/opt/homebrew/opt/python@{{ python_version }}/bin:$PATH"  # symlinks for version-specific python executables
 
 # Python user site packages path
 export PATH="$HOME/Library/Python/{{ python_version }}/bin:$PATH"
 
-# Sonar bin path
+# Sonar
 export PATH="/opt/sonar-scanner-3.2.0.1227-macosx/bin:$PATH"
 
-# My bin path
+# My bin dir (for security reasons, should be last entry in PATH if possible)
 export PATH="$HOME/bin:$PATH"
 
 
-# AWS Login for Mercer
-#[ -f $HOME/bin/mercer-aws-login.sh ] && . $HOME/bin/mercer-aws-login.sh
+###########
+# Aliases #
+###########
 
-
-# Aliases
 alias ai-dev='aws-ai-dev; github-nearmap-ai-dev'
 alias ai-prod='aws-ai-prod; github-nearmap-ai-prod'
 alias eng-dev='aws-eng-dev; github-nearmap-eng-dev'
@@ -210,12 +217,10 @@ alias github-nmfon='cd ~/repos/github/nmfon/'
 alias github-ping='cd ~/repos/github/pingidentity/'
 
 
-# Workaround for the following ansible bug on Mac OS High Sierra (10.13):
-# https://github.com/ansible/ansible/issues/32499
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+#############
+# Functions #
+#############
 
-
-# Functions
 function docker() {
   case $* in
     images* )
@@ -241,7 +246,7 @@ function git() {
   esac
 }
 
-function tu-proxy-status() {
+function proxy-status() {
     echo http_proxy = $http_proxy
     echo HTTP_PROXY = $HTTP_PROXY
 
@@ -252,29 +257,31 @@ function tu-proxy-status() {
     echo NO_PROXY = $NO_PROXY
 }
 
-function tu-proxy-enable() {
-    # Transurban on-prem HTTP proxy
-    export http_proxy=http://proxy-au.transurban.com.au:9090
-    export HTTP_PROXY=http://proxy-au.transurban.com.au:9090
+function proxy-enable() {
+    export http_proxy=http://proxy.example.com.au:9090
+    export HTTP_PROXY=${http_proxy}
 
-    # Transurban on-prem HTTPS proxy
-    export https_proxy=http://proxy-au.transurban.com.au:9090
-    export HTTPS_PROXY=http://proxy-au.transurban.com.au:9090
+    export https_proxy=http://proxy.example.com.au:9090
+    export HTTPS_PROXY=${https_proxy}
 
-    # Bypass proxy
     export no_proxy=localhost
-    export NO_PROXY=localhost
+    export NO_PROXY=${no_proxy}
 
-    tu-proxy-status
+    proxy-status
 }
 
-function tu-proxy-disable() {
+function proxy-disable() {
     unset http_proxy HTTP_PROXY
     unset https_proxy HTTPS_PROXY
     unset no_proxy NO_PROXY
 
-    tu-proxy-status
+    proxy-status
 }
+
+
+#################################
+# Config appended by installers #
+#################################
 
 # Ping Identity - Added with 'pingctl config' on Tue  8 Feb 2022 11:51:50 AEDT
 # Updated to reference HOME
