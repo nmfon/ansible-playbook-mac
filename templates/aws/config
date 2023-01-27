@@ -17,111 +17,71 @@ output = json
 region = ap-southeast-2
 cli_pager =
 output = json
-adfs_config.ssl_verification = True
-adfs_config.role_arn = arn:aws:iam::329866267174:role/admin
-adfs_config.adfs_host = adfs.nearmap.com
-adfs_config.adfs_user = nick.fone@nearmap.com
-adfs_config.session_duration = 21600
-adfs_config.provider_id = urn:amazon:webservices
-adfs_config.sspi = False
-adfs_config.duo_factor = None
-adfs_config.duo_device = None
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 329866267174
+sso_role_name = admin
 
 [profile ai-prod]
 region = ap-southeast-2
 cli_pager =
 output = json
-adfs_config.ssl_verification = True
-adfs_config.role_arn = arn:aws:iam::871430721921:role/admin
-adfs_config.adfs_host = adfs.nearmap.com
-adfs_config.adfs_user = nick.fone@nearmap.com
-adfs_config.session_duration = 21600
-adfs_config.provider_id = urn:amazon:webservices
-adfs_config.sspi = False
-adfs_config.duo_factor = None
-adfs_config.duo_device = None
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 871430721921
+sso_role_name = admin
 
 [profile corporate-dev-and-prod]
 region = ap-southeast-2
 cli_pager =
 output = json
-adfs_config.ssl_verification = True
-adfs_config.role_arn = arn:aws:iam::714783706437:role/admin
-adfs_config.adfs_host = adfs.nearmap.com
-adfs_config.adfs_user = nick.fone@nearmap.com
-adfs_config.session_duration = 21600
-adfs_config.provider_id = urn:amazon:webservices
-adfs_config.sspi = False
-adfs_config.duo_factor = None
-adfs_config.duo_device = None
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 714783706437
+sso_role_name = admin
 
 [profile eng-dev]
 region = ap-southeast-2
 cli_pager =
 output = json
-adfs_config.ssl_verification = True
-adfs_config.role_arn = arn:aws:iam::961173933985:role/admin
-adfs_config.adfs_host = adfs.nearmap.com
-adfs_config.adfs_user = nick.fone@nearmap.com
-adfs_config.session_duration = 21600
-adfs_config.provider_id = urn:amazon:webservices
-adfs_config.sspi = False
-adfs_config.duo_factor = None
-adfs_config.duo_device = None
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 961173933985
+sso_role_name = admin
 
 [profile eng-prod]
 region = ap-southeast-2
 cli_pager =
 output = json
-adfs_config.ssl_verification = True
-adfs_config.role_arn = arn:aws:iam::973383851042:role/admin
-adfs_config.adfs_host = adfs.nearmap.com
-adfs_config.adfs_user = nick.fone@nearmap.com
-adfs_config.session_duration = 21600
-adfs_config.provider_id = urn:amazon:webservices
-adfs_config.sspi = False
-adfs_config.duo_factor = None
-adfs_config.duo_device = None
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 973383851042
+sso_role_name = admin
 
 [profile labs]
 region = ap-southeast-2
 cli_pager =
 output = json
-adfs_config.ssl_verification = True
-adfs_config.role_arn = arn:aws:iam::123390401142:role/admin
-adfs_config.adfs_host = adfs.nearmap.com
-adfs_config.adfs_user = nick.fone@nearmap.com
-adfs_config.session_duration = 21600
-adfs_config.provider_id = urn:amazon:webservices
-adfs_config.sspi = False
-adfs_config.duo_factor = None
-adfs_config.duo_device = None
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 123390401142
+sso_role_name = admin
 
 [profile tech-dev]
 region = ap-southeast-2
 cli_pager =
 output = json
-adfs_config.ssl_verification = True
-adfs_config.role_arn = arn:aws:iam::734606388143:role/admin
-adfs_config.adfs_host = adfs.nearmap.com
-adfs_config.adfs_user = nick.fone@nearmap.com
-adfs_config.session_duration = 21600
-adfs_config.provider_id = urn:amazon:webservices
-adfs_config.sspi = False
-adfs_config.duo_factor = None
-adfs_config.duo_device = None
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 734606388143
+sso_role_name = admin
 
 [profile tech-prod]
 region = ap-southeast-2
 cli_pager =
 output = json
-adfs_config.ssl_verification = True
-adfs_config.role_arn = arn:aws:iam::793922178593:role/admin
-adfs_config.adfs_host = adfs.nearmap.com
-adfs_config.adfs_user = nick.fone@nearmap.com
-adfs_config.session_duration = 21600
-adfs_config.provider_id = urn:amazon:webservices
-adfs_config.sspi = False
-adfs_config.duo_factor = None
-adfs_config.duo_device = None
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 793922178593
+sso_role_name = admin
 
