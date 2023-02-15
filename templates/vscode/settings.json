@@ -35,6 +35,10 @@
         "**/.factorypath": true
     },
 
+    // Get rid of annoying GitLens annotations for every local change
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+
     // Whether the proxy server certificate should be verified against the list of supplied CAs
     "http.proxyStrictSSL": false,
 
