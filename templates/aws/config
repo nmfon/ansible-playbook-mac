@@ -1,6 +1,3 @@
-# My naming convention for aws profiles:
-# COMPANY[--AWS_ACCOUNT_NAME[--IAM_ROLE_NAME]]
-
 # Fields for aws profiles are documented here:
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html#cli-configure-files-settings
 
@@ -31,7 +28,7 @@ sso_region = ap-southeast-2
 sso_account_id = 871430721921
 sso_role_name = admin
 
-[profile corporate-dev-and-prod]
+[profile corporate]
 region = ap-southeast-2
 cli_pager =
 output = json
@@ -67,6 +64,42 @@ sso_region = ap-southeast-2
 sso_account_id = 123390401142
 sso_role_name = admin
 
+[profile legal]
+region = ap-southeast-2
+cli_pager =
+output = json
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 787314805800
+sso_role_name = admin
+
+[profile marketing]
+region = ap-southeast-2
+cli_pager =
+output = json
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 962922887322
+sso_role_name = admin
+
+[profile parent]
+region = ap-southeast-2
+cli_pager =
+output = json
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 187075415760
+sso_role_name = admin
+
+[profile sales-eng]
+region = ap-southeast-2
+cli_pager =
+output = json
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 135630244260
+sso_role_name = admin
+
 [profile tech-dev]
 region = ap-southeast-2
 cli_pager =
@@ -84,4 +117,3 @@ sso_start_url = https://nearmap.awsapps.com/start
 sso_region = ap-southeast-2
 sso_account_id = 793922178593
 sso_role_name = admin
-
