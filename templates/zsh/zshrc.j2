@@ -246,6 +246,24 @@ function git() {
   esac
 }
 
+function git-refresh-local-workspaces() {
+  for dir in $(ls -1); do
+    echo "-----------------------------------------------------------"
+
+    cd $dir
+    echo "$dir"
+
+    default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+    echo "Default branch: $default_branch"
+
+    git status
+    git checkout "$default_branch"
+    git pull
+
+    cd ..
+  done
+}
+
 function proxy-status() {
     echo http_proxy = $http_proxy
     echo HTTP_PROXY = $HTTP_PROXY
