@@ -247,6 +247,8 @@ function git() {
       shift 1
       command git push -u "$@"
       ;;
+    root )
+      cd $(git rev-parse --show-toplevel)
     * )
       command git "$@"
       ;;
