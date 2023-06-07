@@ -74,6 +74,7 @@ homebrew_formulae:
   - bmon
   - composer
   - coreutils
+  - dos2unix
   - eksctl
   - git
   - gnu-tar
