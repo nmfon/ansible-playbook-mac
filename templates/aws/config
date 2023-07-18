@@ -64,15 +64,6 @@ sso_region = ap-southeast-2
 sso_account_id = 123390401142
 sso_role_name = admin
 
-[profile legal]
-region = ap-southeast-2
-cli_pager =
-output = json
-sso_start_url = https://nearmap.awsapps.com/start
-sso_region = ap-southeast-2
-sso_account_id = 787314805800
-sso_role_name = admin
-
 [profile marketing]
 region = ap-southeast-2
 cli_pager =
@@ -98,6 +89,15 @@ output = json
 sso_start_url = https://nearmap.awsapps.com/start
 sso_region = ap-southeast-2
 sso_account_id = 135630244260
+sso_role_name = admin
+
+[profile sharedservices]
+region = ap-southeast-2
+cli_pager =
+output = json
+sso_start_url = https://nearmap.awsapps.com/start
+sso_region = ap-southeast-2
+sso_account_id = 787314805800
 sso_role_name = admin
 
 [profile tech-dev]
