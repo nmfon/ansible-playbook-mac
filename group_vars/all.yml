@@ -105,7 +105,7 @@ homebrew_formulae:
   - sshuttle
   - stax2aws  # requires homebrew tap "stax-labs/homebrew-taps"
   - telnet
-  - terraform
+  - tfenv  # provides multiple versions of terraform
   - tflint
   - tree
   - watch
