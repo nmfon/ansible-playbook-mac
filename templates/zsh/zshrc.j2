@@ -162,7 +162,7 @@ export PATH="$GOPATH/bin:$PATH"
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 # Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/usr/local/bin/brew shellenv)"
 
 # Java
 export JAVA_HOME=/usr/local/opt/openjdk
@@ -172,14 +172,12 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # MySQL client
-export PATH="/opt/homebrew/opt/mysql-client@5.7/bin:$PATH"
+export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 
 # Python
-export PATH="/opt/homebrew/opt/python@{{ python_version }}/libexec/bin:$PATH"  # symlinks for generic python executables
-export PATH="/opt/homebrew/opt/python@{{ python_version }}/bin:$PATH"  # symlinks for version-specific python executables
-
-# Python user site packages path
-export PATH="$HOME/Library/Python/{{ python_version }}/bin:$PATH"
+export PATH="/usr/local/opt/python@{{ python_version }}/libexec/bin:$PATH"  # symlinks for generic python executables
+export PATH="/usr/local/opt/python@{{ python_version }}/bin:$PATH"          # symlinks for version-specific python executables
+export PATH="$HOME/Library/Python/{{ python_version }}/bin:$PATH"           # path for user's python packages
 
 # Sonar
 export PATH="/opt/sonar-scanner-3.2.0.1227-macosx/bin:$PATH"

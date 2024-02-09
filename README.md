@@ -14,13 +14,14 @@ xcode-select --install
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/usr/local/bin/brew shellenv)"
 
 # Install Python (includes pip3)
 brew install python@${PYTHON_VERSION}
-export PATH=/opt/homebrew/opt/python@${PYTHON_VERSION}/libexec/bin:${PATH}  # symlinks for generic python executables
-export PATH=/opt/homebrew/opt/python@${PYTHON_VERSION}/bin:${PATH}  # symlinks for version-specific python executables
-export PATH=${HOME}/Library/Python/${PYTHON_VERSION}/bin:${PATH}  # user-installed python executables
+
+export PATH=/usr/local/opt/python@${PYTHON_VERSION}/libexec/bin:${PATH}  # symlinks for generic python executables
+export PATH=/usr/local/opt/python@${PYTHON_VERSION}/bin:${PATH}          # symlinks for version-specific python executables
+export PATH=${HOME}/Library/Python/${PYTHON_VERSION}/bin:${PATH}         # path for user's python packages
 
 # Install Ansible
 pip3 install --upgrade --user ansible
