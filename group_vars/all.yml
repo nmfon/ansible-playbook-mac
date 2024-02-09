@@ -36,52 +36,55 @@ macos_processes_to_relaunch:
 homebrew_taps:
   - homebrew/cask-fonts
   - kreuzwerker/taps
-#  - pingidentity/devops  # deprecated
+# - pingidentity/devops  # deprecated
   - pingidentity/tap  # new
   - stax-labs/homebrew-taps
 
 # Homebrew casks (packages for GUI macOS applications)
 homebrew_casks:
-  - 1password
-  - adobe-acrobat-reader  # requires Rosetta 2
-  - beyond-compare
+# - 1password  # no longer supported on Mac OS 10.13.6
+# - adobe-acrobat-reader  # requires Rosetta 2 and no longer supported on Mac OS 10.13.6
+# - beyond-compare  # already installed
   - box-sync
-  - docker
+# - docker  # no longer supported on Mac OS 10.13.6
   - font-meslo-for-powerline  # requires homebrew tap "homebrew/cask-fonts"
-#  - google-chrome  # already installed via Self Service application (Nearmap)
-  - iterm2
-  - kindle
-  - kitematic
-#  - microsoft-office  # already installed via Self Service application (Nearmap)
-  - microsoft-remote-desktop
-  - microsoft-teams  # requires Rosetta 2
-  - openconnect-gui
+# - google-chrome  # already installed
+# - google-drive  # no longer supported on Mac OS 10.13.6
+# - iterm2  # no longer supported on Mac OS 10.13.6
+# - kindle  # no longer supported on Mac OS 10.13.6
+# - kitematic  # runs like molasses on Mac OS 10.13.6
+# - microsoft-office  # not required for now
+# - microsoft-remote-desktop  # no longer supported on Mac OS 10.13.6
+# - microsoft-teams  # requires Rosetta 2 and no longer supported on Mac OS 10.13.6
+# - openconnect-gui  # not required for now
   - postman
-  - skype-for-business  # requires Rosetta 2
-#  - slack  # already installed via Self Service application (Nearmap)
-#  - spectacle  # install broken
+# - skype-for-business  # requires Rosetta 2 and no longer supported on Mac OS 10.13.6
+# - slack  # no longer supported on Mac OS 10.13.6
+# - spectacle  # install broken
   - utm
   - vagrant
-#  - virtualbox  # requires an Intel processor (it's an x86 hypervisor, not an emulator)... use utm instead
-  - visual-studio-code
-  - vlc
-#  - zoom  # already installed via Self Service application (Nearmap)
+# - virtualbox  # requires an Intel processor (it's an x86 hypervisor, not an emulator)... use utm instead
+# - visual-studio-code  # no longer supported on Mac OS 10.13.6
+# - vlc  # no longer supported on Mac OS 10.13.6
+  - zoom
 
 # Homebrew formulae (packages for command-line macOS applications)
 homebrew_formulae:
-  - awscli@2
+# - gcc  # required by various formulae on Mac OS 10.13.6 (such as awscli@2), and fails to build on Mac OS 10.13.6 (Warning: You are using macOS 10.13. We (and Apple) do not provide support for this old version.)
+# - z3  # requires GNU gcc, and is required by various formulae on Mac OS 10.13.6 (such as awscli@2i, node and podman)
+# - awscli@2  # requires z3 on Mac Os 10.13.6, which requires GNU gcc
   - bash
-  - bmon
-  - composer
+# - bmon
+# - composer
   - coreutils
   - dos2unix
   - eksctl
   - git
   - gnu-tar
-  - gnupg
+# - gnupg
   - go
-  - gradle
-  - groovy
+# - gradle
+# - groovy
   - helm
   - jq
   - k9s
@@ -89,22 +92,22 @@ homebrew_formulae:
   - kubectl
   - kubectx
   - kustomize
-  - maven
-  - m1-terraform-provider-helper  # requires homebrew tap "kreuzwerker/taps"
+# - maven
+# - m1-terraform-provider-helper  # requires homebrew tap "kreuzwerker/taps"
   - minikube
-  - mysql-client@5.7
-  - node
-  - openjdk
+# - mysql-client
+# - node  # fails to install on Mac OS 10.13.6 (Error: An exception occurred within a child process: FormulaUnavailableError: No available formula with the name /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/z/z3.rb)
+# - openjdk
   - packer
-  - pass
-#  - ping-devops  # deprecated (supports bash)
-  - pingctl  # new (supports zsh), requires homebrew tap "pingidentity/taps"
-  - podman
-  - saml2aws
-  - shellcheck
-  - sshuttle
-  - stax2aws  # requires homebrew tap "stax-labs/homebrew-taps"
-  - telnet
+# - pass
+# - ping-devops  # deprecated (supports bash)
+# - pingctl  # new (supports zsh), requires homebrew tap "pingidentity/taps"
+# - podman  # requires z3 on Mac Os 10.13.6, which requires GNU gcc
+# - saml2aws
+# - shellcheck
+# - sshuttle
+# - stax2aws  # requires homebrew tap "stax-labs/homebrew-taps"
+# - telnet  # requires xcode (not just the Command Line Tools for xcode) on Mac OS 10.13.6
   - tfenv  # provides multiple versions of terraform
   - tflint
   - tree

@@ -36,12 +36,12 @@
 
 # Install Node.js packages
 
-  - name: install node.js packages
-    npm:
-      name: "{{ item }}"
-      global: yes
-      state: latest
-    loop: "{{ nodejs_packages }}"
+#  - name: install node.js packages
+#    npm:
+#      name: "{{ item }}"
+#      global: yes
+#      state: latest
+#    loop: "{{ nodejs_packages }}"
 
 # Install Python packages
 

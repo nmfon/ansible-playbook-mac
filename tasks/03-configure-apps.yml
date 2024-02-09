@@ -56,8 +56,8 @@
 
 # Install Visual Studio Code extensions
 
-  - name: install vscode extensions
-    command: code --install-extension {{ item.id}}
-    loop: "{{ vscode_extensions }}"
-    loop_control:
-      label: "{{ item.name }}"
+#  - name: install vscode extensions
+#    command: code --install-extension {{ item.id}}
+#    loop: "{{ vscode_extensions }}"
+#    loop_control:
+#      label: "{{ item.name }}"
