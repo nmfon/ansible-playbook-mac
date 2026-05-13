@@ -135,7 +135,7 @@ homebrew_formulae:
   - pnpm  # another package manager for Node.js projects
   - podman
   - popeye
-  - postgresql@14
+  - postgresql@17
   - pwgen
   - rain  # command line tool for working with AWS CloudFormation templates and stacks
   - saml2aws
