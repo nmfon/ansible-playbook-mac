@@ -149,7 +149,6 @@ homebrew_formulae:
   - velero
   - watch
   - wget
-  - yarn
   - ykman  # yubikey manager
 
 
