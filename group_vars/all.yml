@@ -108,6 +108,7 @@ homebrew_formulae:
   - jenv
   - jose
   - jq
+  - k6
   - k9s
   - kopia
   - kops
