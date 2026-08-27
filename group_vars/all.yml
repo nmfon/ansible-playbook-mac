@@ -110,6 +110,7 @@ homebrew_formulae:
   - jenv
   - jose
   - jq
+  - jwt-cli
   - k6
   - k9s
   - kopia
