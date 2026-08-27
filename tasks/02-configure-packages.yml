@@ -22,6 +22,12 @@
       state: present
     loop: "{{ homebrew_taps }}"
 
+  - name: trust homebrew taps (repos)
+    command:
+      cmd: "brew trust --tap {{ item }}"
+    loop: "{{ homebrew_taps }}"
+    changed_when: false
+
   - name: install homebrew casks (packages for GUI macOS applications)
     homebrew_cask:
       name: "{{ item }}"

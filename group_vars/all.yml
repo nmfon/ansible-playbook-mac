@@ -36,8 +36,10 @@ macos_processes_to_relaunch:
 homebrew_taps:
   - argoproj/tap
   - fluxcd/tap
+  - grafana/grafana
   - hashicorp/tap
   - kreuzwerker/taps
+  - mike-engel/jwt-cli
   - pingidentity/tap  # replacement for pingidentity/devops tap
   - radiusmethod/awsd
   - stax-labs/homebrew-taps
